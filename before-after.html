@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Before &amp; After Gallery — SoleCraft Repair Studio</title>
+  <meta name="description" content="See the results of our shoe repair work. Before and after comparisons of sole replacement, heel repair, leather restoration, stitching and more at SoleCraft.">
+  <link rel="canonical" href="before-after.html">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/dark-theme.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/desktop.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/responsive-fixes.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="sc-navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="index.html" class="sc-brand" aria-label="SoleCraft Repair Studio Home"><img src="assets/images/common/logo.png" alt="SoleCraft Repair Studio" class="sc-brand-logo"></a>
+      <ul class="sc-nav-links"><li><a href="index.html" class="nav-link">Home 1</a></li><li><a href="home2.html" class="nav-link">Home 2</a></li><li><a href="about.html" class="nav-link">About</a></li><li><a href="services.html" class="nav-link">Services</a></li><li><a href="pricing.html" class="nav-link">Pricing</a></li><li><a href="before-after.html" class="nav-link active">Before &amp; After</a></li><li><a href="craftsmanship.html" class="nav-link">Craftsmanship</a></li><li><a href="contact.html" class="nav-link">Contact</a></li></ul>
+      <div class="sc-nav-controls"><a href="login.html" class="btn-login">Login</a><button class="sc-icon-btn sc-theme-toggle" aria-label="Toggle theme"><i class="bi bi-moon sc-theme-icon"></i></button><button class="sc-icon-btn sc-rtl-toggle" aria-label="Toggle direction"><span class="sc-rtl-label" style="font-size:0.65rem;font-weight:700;">RTL</span></button><button class="sc-hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
+    </div>
+  </nav>
+  <div class="sc-mobile-menu" id="mobile-menu"><ul class="mobile-nav-links"><li><a href="index.html">Home 1</a></li><li><a href="home2.html">Home 2</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="before-after.html" class="active">Before &amp; After</a></li><li><a href="craftsmanship.html">Craftsmanship</a></li><li><a href="contact.html">Contact</a></li></ul><div class="mobile-controls"><a href="login.html" class="btn-sc btn-secondary-sc btn-sc-sm">Login</a><button class="sc-icon-btn sc-theme-toggle" aria-label="Toggle theme"><i class="bi bi-moon sc-theme-icon"></i></button><button class="sc-icon-btn sc-rtl-toggle" aria-label="Toggle direction"><span class="sc-rtl-label" style="font-size:0.65rem;font-weight:700;">RTL</span></button></div></div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="sc-page-hero">
+  <div class="sc-hero-bg" style="background-image:url('assets/images/hero/before-after.jpg');"></div>
+  <div class="hero-overlay-center" aria-hidden="true"></div>
+  <div class="page-hero-content">
+    <p class="eyebrow">Results Speak Clearly</p>
+    <h1>Before &amp; After Gallery</h1>
+    <p>Drag the slider on each pair to compare before and after. Every result shown is from an actual repair at SoleCraft.</p>
+  </div>
+</section>
+
+<!-- GALLERY SECTION -->
+<section class="section-pad bg-cream" id="gallery">
+  <div class="container-sc">
+    <div class="section-header center fade-up">
+      <p class="eyebrow">Repair Comparisons</p>
+      <div class="sc-divider"></div>
+      <h2>Filter by Repair Type</h2>
+      <p>Use the filters below to browse results by category. Drag the slider on each card to compare before and after.</p>
+    </div>
+
+    <!-- Filters -->
+    <div class="gallery-filters fade-up stagger-1" role="group" aria-label="Gallery filters">
+      <button class="gallery-filter-btn active" data-filter="all" id="filter-all">All</button>
+      <button class="gallery-filter-btn" data-filter="sole" id="filter-sole">Sole</button>
+      <button class="gallery-filter-btn" data-filter="heel" id="filter-heel">Heel</button>
+      <button class="gallery-filter-btn" data-filter="leather" id="filter-leather">Leather</button>
+      <button class="gallery-filter-btn" data-filter="stitching" id="filter-stitching">Stitching</button>
+      <button class="gallery-filter-btn" data-filter="fit" id="filter-fit">Fit</button>
+      <button class="gallery-filter-btn" data-filter="protection" id="filter-protection">Protection</button>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="gallery-grid fade-up stagger-2">
+
+      <!-- 1 — Sole -->
+      <div class="gallery-item" data-category="sole">
+        <div class="gallery-card">
+          <div class="ba-container" role="img" aria-label="Boot sole before and after replacement">
+            <div class="ba-after"><img src="assets/images/gallery/sole-commando-after.jpg" alt="Boot resoled with brand new Vibram lugged rubber sole" loading="lazy"></div>
+            <div class="ba-before"><img src="assets/images/gallery/sole-before.jpg" alt="Old worn-through boot sole with large hole" loading="lazy"></div>
+            <div class="ba-handle" aria-hidden="true"><div class="ba-handle-knob"><i class="bi bi-chevron-expand" style="transform:rotate(90deg)"></i></div></div>
+            <span class="ba-label before" aria-hidden="true">Before</span>
+            <span class="ba-label after" aria-hidden="true">After</span>
+          </div>
+          <div class="gallery-card-info">
+            <div class="gallery-card-label">Full Sole Replacement</div>
+            <div class="gallery-card-meta"><span class="sc-badge sc-badge-primary">SOLE</span> · Leather Work Boots</div>
+            <div class="gallery-card-desc">Worn-through leather and rubber sole completely rebuilt with new midsole and heavy-duty Vibram lugged sole.</div>
+            <div class="gallery-card-footer">
+              <span class="sc-badge sc-badge-accent">Leather</span>
+              <button class="gallery-expand-btn" aria-label="View full size comparison"><i class="bi bi-arrows-fullscreen"></i> Expand</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 — Leather -->
+      <div class="gallery-item" data-category="leather">
+        <div class="gallery-card">
+          <div class="ba-container" role="img" aria-label="Oxford shoes before and after leather restoration">
+            <div class="ba-after"><img src="assets/images/gallery/leather-mirror-after.jpg" alt="Oxford shoes after deep nourishment and mirror gloss glaze" loading="lazy"></div>
+            <div class="ba-before"><img src="assets/images/gallery/leather-scuffed-before.jpg" alt="Scuffed, faded, and dry leather Oxford shoes before treatment" loading="lazy"></div>
+            <div class="ba-handle" aria-hidden="true"><div class="ba-handle-knob"><i class="bi bi-chevron-expand" style="transform:rotate(90deg)"></i></div></div>
+            <span class="ba-label before" aria-hidden="true">Before</span>
+            <span class="ba-label after" aria-hidden="true">After</span>
+          </div>
+          <div class="gallery-card-info">
+            <div class="gallery-card-label">Leather Restoration &amp; Polish</div>
+            <div class="gallery-card-meta"><span class="sc-badge sc-badge-accent">LEATHER</span> · Full-grain Oxford</div>
+            <div class="gallery-card-desc">Cleaning, conditioning, colour restoration and mirror polish brought dull, scuffed leather back to a rich shine.</div>
+            <div class="gallery-card-footer">
+              <span class="sc-badge sc-badge-primary">Formal</span>
+              <button class="gallery-expand-btn" aria-label="View full size comparison"><i class="bi bi-arrows-fullscreen"></i> Expand</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 — Heel -->
+      <div class="gallery-item" data-category="heel">
+        <div class="gallery-card">
+          <div class="ba-container" role="img" aria-label="Dress shoes before and after heel repair">
+            <div class="ba-after"><img src="assets/images/gallery/heel-rebuilt-after.jpg" alt="Dress shoes after heel block rebuilding with brass nails" loading="lazy"></div>
+            <div class="ba-before"><img src="assets/images/gallery/heel-worn-before.jpg" alt="Dress shoes before heel repair — worn slanted abraded heel block" loading="lazy"></div>
+            <div class="ba-handle" aria-hidden="true"><div class="ba-handle-knob"><i class="bi bi-chevron-expand" style="transform:rotate(90deg)"></i></div></div>
+            <span class="ba-label before" aria-hidden="true">Before</span>
+            <span class="ba-label after" aria-hidden="true">After</span>
+          </div>
+          <div class="gallery-card-info">
+            <div class="gallery-card-label">Heel Block Rebuilding</div>
+            <div class="gallery-card-meta"><span class="sc-badge sc-badge-primary">HEEL</span> · Leather Brogue</div>
+            <div class="gallery-card-desc">Heavily worn heel block rebuilt to original height using stacked leather lifts. New heel tip fitted and edge dressed to match.</div>
+            <div class="gallery-card-footer">
+              <span class="sc-badge sc-badge-accent">Formal</span>
+              <button class="gallery-expand-btn" aria-label="View full size comparison"><i class="bi bi-arrows-fullscreen"></i> Expand</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 — Stitching -->
+      <div class="gallery-item" data-category="stitching">
+        <div class="gallery-card">
+          <div class="ba-container" role="img" aria-label="Boot seam before and after stitching repair">
+            <div class="ba-after"><img src="assets/images/gallery/stitching-clean-after.jpg" alt="Leather boot after seam welt hand-stitching with tight waxed thread" loading="lazy"></div>
+            <div class="ba-before"><img src="assets/images/gallery/stitching-torn-before.jpg" alt="Leather boot with blown-out split seam before stitching repair" loading="lazy"></div>
+            <div class="ba-handle" aria-hidden="true"><div class="ba-handle-knob"><i class="bi bi-chevron-expand" style="transform:rotate(90deg)"></i></div></div>
+            <span class="ba-label before" aria-hidden="true">Before</span>
+            <span class="ba-label after" aria-hidden="true">After</span>
+          </div>
+          <div class="gallery-card-info">
+            <div class="gallery-card-label">Full Seam Repair</div>
+            <div class="gallery-card-meta"><span class="sc-badge sc-badge-dark">STITCHING</span> · Leather Boot</div>
+            <div class="gallery-card-desc">Torn upper seam re-stitched from quarter to heel using matched waxed linen thread. Leather conditioned after repair.</div>
+            <div class="gallery-card-footer">
+              <span class="sc-badge sc-badge-primary">Boots</span>
+              <button class="gallery-expand-btn" aria-label="View full size comparison"><i class="bi bi-arrows-fullscreen"></i> Expand</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 — Leather -->
+      <div class="gallery-item" data-category="leather">
+        <div class="gallery-card">
+          <div class="ba-container" role="img" aria-label="Suede shoe cleaning before and after">
+            <div class="ba-after"><img src="assets/images/gallery/suede-restored-after.jpg" alt="Suede boot restored with clean nap and revived rich tone" loading="lazy"></div>
+            <div class="ba-before"><img src="assets/images/gallery/suede-stained-before.jpg" alt="Muddy soiled suede boot with water marks before cleaning" loading="lazy"></div>
+            <div class="ba-handle" aria-hidden="true"><div class="ba-handle-knob"><i class="bi bi-chevron-expand" style="transform:rotate(90deg)"></i></div></div>
+            <span class="ba-label before" aria-hidden="true">Before</span>
+            <span class="ba-label after" aria-hidden="true">After</span>
+          </div>
+          <div class="gallery-card-info">
+            <div class="gallery-card-label">Professional Shoe Cleaning</div>
+            <div class="gallery-card-meta"><span class="sc-badge sc-badge-accent">LEATHER</span> · Suede Chukka</div>
+            <div class="gallery-card-desc">Heavily soiled footwear cleaned using specialist cleaner and brush. Salt marks and mud residue removed throughout.</div>
+            <div class="gallery-card-footer">
+              <span class="sc-badge sc-badge-dark">Suede</span>
+              <button class="gallery-expand-btn" aria-label="View full size comparison"><i class="bi bi-arrows-fullscreen"></i> Expand</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 — Protection -->
+      <div class="gallery-item" data-category="protection">
+        <div class="gallery-card">
+          <div class="ba-container" role="img" aria-label="Leather boot before and after waterproofing treatment">
+            <div class="ba-after"><img src="assets/images/services/waterproofing.jpg" alt="Leather boot after waterproofing treatment with water beading" loading="lazy"></div>
+            <div class="ba-before"><img src="assets/images/gallery/waterproof-before.jpg" alt="Dry weathered leather boot with water and salt stains before treatment" loading="lazy"></div>
+            <div class="ba-handle" aria-hidden="true"><div class="ba-handle-knob"><i class="bi bi-chevron-expand" style="transform:rotate(90deg)"></i></div></div>
+            <span class="ba-label before" aria-hidden="true">Before</span>
+            <span class="ba-label after" aria-hidden="true">After</span>
+          </div>
+          <div class="gallery-card-info">
+            <div class="gallery-card-label">Waterproofing &amp; Conditioning</div>
+            <div class="gallery-card-meta"><span class="sc-badge sc-badge-primary">PROTECTION</span> · Leather Boot</div>
+            <div class="gallery-card-desc">Conditioning and wax-based waterproofing restored the leather and protected it for outdoor wear.</div>
+            <div class="gallery-card-footer">
+              <span class="sc-badge sc-badge-accent">Leather</span>
+              <button class="gallery-expand-btn" aria-label="View full size comparison"><i class="bi bi-arrows-fullscreen"></i> Expand</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY CTA -->
+<section class="cta-section section-pad" style="background-image:url('assets/images/cta/before-after-cta.png');">
+  <div class="cta-overlay" aria-hidden="true"></div>
+  <div class="container-sc cta-content">
+    <p class="eyebrow" style="color:var(--clr-accent);">Ready for a Transformation?</p>
+    <h2 style="color:var(--clr-white);">Your shoes deserve the same treatment.</h2>
+    <p>Every pair in this gallery arrived worn and left restored. Yours can too.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--sp-2);justify-content:center;margin-top:var(--sp-4);">
+      <a href="contact.html#enquiry" class="btn-sc btn-primary-sc btn-sc-lg" id="gallery-cta-enquire-btn">Request a Repair</a>
+      <a href="pricing.html" class="btn-sc btn-ghost-sc btn-sc-lg" id="gallery-cta-pricing-btn">View Pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="sc-lightbox" id="sc-lightbox" role="dialog" aria-modal="true" aria-label="Expanded comparison view">
+  <div class="sc-lightbox-inner">
+    <button class="sc-lightbox-close" id="lightbox-close-btn" aria-label="Close expanded view"><i class="bi bi-x-lg"></i></button>
+    <div class="sc-lightbox-slider"></div>
+    <div class="sc-lightbox-info">
+      <h4 class="sc-lightbox-title"></h4>
+      <p class="sc-lightbox-desc"></p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="sc-footer">
+  <div class="container-sc">
+    <div class="sc-footer-grid">
+      <div class="footer-brand"><a href="index.html" class="footer-brand-link" aria-label="SoleCraft home"><img src="assets/images/common/logo-light.png" alt="SoleCraft Repair Studio" class="footer-brand-logo"></a><p>Professional shoe repair and leather restoration. Trusted craftsmanship since 2009.</p><div class="footer-social"><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a><a href="#" aria-label="Google Maps"><i class="bi bi-geo-alt"></i></a></div></div>
+      <div class="footer-col"><h5>Pages</h5><ul><li><a href="index.html">Home 1</a></li><li><a href="home2.html">Home 2</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="before-after.html">Before &amp; After</a></li><li><a href="craftsmanship.html">Craftsmanship</a></li></ul></div>
+      <div class="footer-col"><h5>Services</h5><ul><li><a href="services.html#sole">Sole Replacement</a></li><li><a href="services.html#heel">Heel Repair</a></li><li><a href="services.html#leather">Leather Polishing</a></li><li><a href="services.html#stitching">Shoe Stitching</a></li><li><a href="services.html#stretch">Stretch Fitting</a></li><li><a href="services.html#waterproof">Waterproofing</a></li></ul></div>
+      <div class="footer-col"><h5>Contact &amp; Hours</h5><div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>42 Craftsman Lane, Nungambakkam, Chennai 600 034</span></div><div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><span>+91 98765 43210</span></div><div class="footer-contact-item"><i class="bi bi-envelope-fill"></i><span>hello@solecraftrepair.in</span></div><div class="footer-hours" style="margin-top:0.75rem;"><div class="footer-hours-row"><span class="day">Mon–Fri</span><span>9:00 AM – 7:00 PM</span></div><div class="footer-hours-row"><span class="day">Saturday</span><span>10:00 AM – 5:00 PM</span></div><div class="footer-hours-row"><span class="day">Sunday</span><span>Closed</span></div></div></div>
+    </div>
+    <div class="sc-footer-bottom"><p>&copy; 2026 SoleCraft Repair Studio. All rights reserved.</p><div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+  </div>
+</footer>
+<button id="scroll-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+<script src="js/main.js"></script>
+<script src="js/gallery.js"></script>
+</body>
+</html>

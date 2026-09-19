@@ -1,0 +1,414 @@
+/* ============================================================
+   SoleCraft — forms.css
+   Enquiry form, validation, file upload, timings, FAQ
+   ============================================================ */
+
+/* ── Form Base ───────────────────────────────────────────── */
+.sc-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.sc-form-label {
+  font-family: var(--font-body);
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--clr-heading);
+}
+
+.sc-form-label .required {
+  color: var(--clr-primary);
+  margin-left: 2px;
+}
+
+.sc-form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  color: var(--clr-heading);
+  background: var(--bg-card);
+  border: 1.5px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.sc-form-control::placeholder {
+  color: rgba(111,103,95,0.60);
+}
+
+.sc-form-control:focus {
+  outline: none;
+  border-color: var(--clr-primary);
+  box-shadow: 0 0 0 3px rgba(107,74,50,0.15);
+}
+
+.sc-form-control.is-invalid {
+  border-color: #C0392B;
+  box-shadow: 0 0 0 3px rgba(192,57,43,0.12);
+}
+
+.sc-form-control.is-valid {
+  border-color: #27AE60;
+  box-shadow: 0 0 0 3px rgba(39,174,96,0.12);
+}
+
+textarea.sc-form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+select.sc-form-control {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236F675F' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+  cursor: pointer;
+}
+
+[data-theme="dark"] select.sc-form-control {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23D2AA85' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+
+.form-row-2 > .sc-form-group { min-width: 0; }
+select.sc-form-control { max-width: 100%; }
+
+.sc-select { position: relative; width: 100%; min-width: 0; }
+.sc-select::after {
+  content: '';
+  position: absolute;
+  right: 1.1rem;
+  top: 50%;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-right: 2px solid var(--clr-primary);
+  border-bottom: 2px solid var(--clr-primary);
+  transform: translateY(-70%) rotate(45deg);
+  pointer-events: none;
+}
+[data-theme="dark"] .sc-select::after { border-color: #D2AA85; }
+.sc-select-native { display: none; }
+.sc-select-trigger {
+  display: block;
+  text-align: left;
+  cursor: pointer;
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236F675F' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+[data-theme="dark"] .sc-select-trigger {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23D2AA85' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+}
+.sc-select-trigger:focus-visible { outline: none; border-color: var(--clr-primary); box-shadow: 0 0 0 3px rgba(107,74,50,0.15); }
+.sc-form-group.has-error .sc-select-trigger { border-color: #C0392B; }
+.sc-select-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  width: 100%;
+  max-height: min(16rem, 40vh);
+  overflow-y: auto;
+  z-index: 30;
+  background: var(--bg-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+}
+.sc-select-menu[hidden] { display: none; }
+.sc-select.open-up .sc-select-menu { top: auto; bottom: calc(100% + 4px); }
+.sc-select-option {
+  display: block;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 0;
+  background: transparent;
+  color: var(--clr-heading);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.sc-select-option:hover, .sc-select-option:focus-visible,
+.sc-select-option[aria-selected="true"] { background: var(--clr-border); outline: none; }
+
+.form-hint {
+  font-size: var(--fs-xs);
+  color: var(--clr-body);
+}
+
+.form-error {
+  font-size: var(--fs-xs);
+  color: #C0392B;
+  display: none;
+}
+
+.sc-form-group.has-error .form-error {
+  display: block;
+}
+
+/* ── Form Row Grid ───────────────────────────────────────── */
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-3);
+}
+
+.form-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--sp-3);
+}
+
+/* ── Enquiry Form Container ──────────────────────────────── */
+.enquiry-form-wrap {
+  background: var(--bg-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-xl);
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+/* ── File Upload ─────────────────────────────────────────── */
+.file-upload-area {
+  border: 2px dashed var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4);
+  text-align: center;
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+  position: relative;
+}
+
+.file-upload-area:hover,
+.file-upload-area.drag-over {
+  border-color: var(--clr-primary);
+  background: rgba(107,74,50,0.04);
+}
+
+.file-upload-area input[type="file"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.file-upload-icon {
+  font-size: 1.75rem;
+  color: var(--clr-primary);
+  margin-bottom: var(--sp-1);
+}
+
+.file-upload-area p {
+  font-size: var(--fs-sm);
+  color: var(--clr-body);
+  max-width: none;
+  margin-bottom: 0.25rem;
+}
+
+.file-upload-area .hint {
+  font-size: var(--fs-xs);
+  color: var(--clr-body);
+  opacity: 0.65;
+}
+
+.file-preview-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.625rem;
+  margin-top: var(--sp-2);
+}
+
+.file-preview-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0.75rem;
+  background: var(--clr-beige);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-xs);
+  color: var(--clr-heading);
+}
+
+.file-preview-item button {
+  background: none;
+  border: none;
+  color: var(--clr-body);
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 0;
+  line-height: 1;
+}
+
+/* ── Form Success/Error States ───────────────────────────── */
+.form-message {
+  display: none;
+  padding: var(--sp-3) var(--sp-4);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  text-align: center;
+  align-items: center;
+  gap: 0.625rem;
+  justify-content: center;
+}
+
+.form-message.show {
+  display: flex;
+}
+
+.form-message.success {
+  background: rgba(39,174,96,0.10);
+  color: #1E8449;
+  border: 1px solid rgba(39,174,96,0.25);
+}
+
+.form-message.error {
+  background: rgba(192,57,43,0.10);
+  color: #C0392B;
+  border: 1px solid rgba(192,57,43,0.25);
+}
+
+/* ── Store Timings ───────────────────────────────────────── */
+.timings-table {
+  background: var(--bg-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.timings-header {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.timings-header h4 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xl);
+  color: var(--clr-heading);
+}
+
+.timings-header i {
+  color: var(--clr-primary);
+}
+
+.timings-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem var(--sp-4);
+  border-bottom: 1px solid var(--clr-border);
+  transition: background var(--transition-fast);
+}
+
+.timings-row:last-child {
+  border-bottom: none;
+}
+
+.timings-row.today {
+  background: rgba(107,74,50,0.06);
+}
+
+.timings-row .day-name {
+  font-weight: 600;
+  font-size: var(--fs-sm);
+  color: var(--clr-heading);
+}
+
+.timings-row .today-tag {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--clr-primary);
+  background: rgba(107,74,50,0.10);
+  padding: 0.125rem 0.5rem;
+  border-radius: var(--radius-full);
+  margin-left: 0.5rem;
+}
+
+.timings-row .hours {
+  font-size: var(--fs-sm);
+  color: var(--clr-body);
+  text-align: right;
+}
+
+.timings-row.closed .hours {
+  color: rgba(111,103,95,0.50);
+  font-style: italic;
+}
+
+/* ── FAQ Accordion ───────────────────────────────────────── */
+.sc-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sc-accordion-item {
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  background: var(--bg-card);
+  overflow: hidden;
+}
+
+.sc-accordion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.125rem var(--sp-4);
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  color: var(--clr-heading);
+  text-align: left;
+  gap: var(--sp-3);
+  transition: background var(--transition-fast);
+}
+
+.sc-accordion-header:hover {
+  background: rgba(107,74,50,0.04);
+}
+
+.sc-accordion-header i {
+  color: var(--clr-primary);
+  font-size: 0.875rem;
+  flex-shrink: 0;
+  transition: transform var(--transition-base);
+}
+
+.sc-accordion-item.open .sc-accordion-header i {
+  transform: rotate(180deg);
+}
+
+.sc-accordion-body {
+  display: none;
+  padding: 0 var(--sp-4) var(--sp-3);
+  font-size: var(--fs-sm);
+  color: var(--clr-body);
+  line-height: 1.75;
+}
+
+.sc-accordion-item.open .sc-accordion-body {
+  display: block;
+  animation: accordionOpen 0.25s ease;
+}
+
+@keyframes accordionOpen {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

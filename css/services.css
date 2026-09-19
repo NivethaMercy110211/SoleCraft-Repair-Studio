@@ -1,0 +1,309 @@
+/* ============================================================
+   SoleCraft — services.css
+   Service category layout, cards, badges
+   ============================================================ */
+
+/* ── Service Category Section ────────────────────────────── */
+.service-category {
+  padding-block: var(--sp-7);
+}
+
+.service-category + .service-category {
+  border-top: 1px solid var(--clr-border);
+}
+
+.service-category-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-5);
+  text-align: center;
+}
+
+.service-category-header > div:last-child {
+  width: min(100%, 55ch);
+}
+
+.service-category-header .service-category-desc {
+  margin-inline: auto;
+}
+
+.service-category-icon {
+  width: 56px;
+  height: 56px;
+  background: rgba(107,74,50,0.10);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--clr-primary);
+  flex-shrink: 0;
+}
+
+.service-category-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-2xl);
+  color: var(--clr-heading);
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.service-category-desc {
+  font-size: var(--fs-sm);
+  color: var(--clr-body);
+  max-width: 55ch;
+}
+
+/* ── Service Cards Grid ──────────────────────────────────── */
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--card-gap);
+}
+
+.service-grid-2col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.service-grid-4col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ── Individual Service Card ─────────────────────────────── */
+.service-card {
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  overflow: hidden;
+  transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+}
+
+.service-card-featured > .sc-badge {
+  position: absolute;
+  z-index: 1;
+  top: var(--sp-2);
+  left: var(--sp-2);
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(107,74,50,0.25);
+}
+
+.service-card-media {
+  position: relative;
+  width: calc(100% + 2 * var(--sp-4));
+  margin: calc(-1 * var(--sp-4)) calc(-1 * var(--sp-4)) var(--sp-3) calc(-1 * var(--sp-4));
+  height: 200px;
+  overflow: hidden;
+  background: var(--clr-beige);
+}
+
+.service-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.service-card:hover .service-card-media img {
+  transform: scale(1.06);
+}
+
+.service-icon-wrap {
+  width: 44px;
+  height: 44px;
+  background: rgba(107,74,50,0.10);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-primary);
+  font-size: 1.125rem;
+  flex-shrink: 0;
+}
+
+.service-card-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-xl);
+  color: var(--clr-heading);
+  line-height: 1.25;
+}
+
+.service-card-desc {
+  font-size: var(--fs-sm);
+  color: var(--clr-body);
+  line-height: 1.65;
+  flex: 1;
+}
+
+.service-card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: var(--sp-2);
+  border-top: 1px solid var(--clr-border);
+}
+
+.service-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  font-size: var(--fs-xs);
+  color: var(--clr-body);
+}
+
+.service-meta-item i {
+  color: var(--clr-primary);
+  font-size: 0.75rem;
+}
+
+.service-card-price {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  font-weight: 700;
+  color: var(--clr-primary);
+}
+
+.service-card-cta {
+  margin-top: var(--sp-2);
+}
+
+/* ── Service Image Card (with hero image) ─────────────────── */
+.service-img-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--clr-border);
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.service-img-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.service-img-card .img-wrap {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.service-img-card .img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.service-img-card:hover .img-wrap img {
+  transform: scale(1.06);
+}
+
+.service-img-card .img-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+}
+
+.service-img-card .card-content {
+  padding: var(--sp-3) var(--sp-4) var(--sp-4);
+}
+
+/* ── Featured Services Strip ─────────────────────────────── */
+.services-strip {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--clr-border);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.services-strip-item {
+  background: var(--bg-card);
+  padding: var(--sp-4);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--sp-1);
+  transition: background var(--transition-fast);
+}
+
+.services-strip-item:hover {
+  background: var(--clr-beige);
+}
+
+.services-strip-item i {
+  font-size: 1.5rem;
+  color: var(--clr-primary);
+}
+
+.services-strip-item span {
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  color: var(--clr-heading);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Additional Services Section ─────────────────────────── */
+.additional-services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--card-gap);
+}
+
+.add-service-card {
+  background: var(--bg-card);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-3);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-2);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.add-service-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.add-service-card .add-icon {
+  width: 38px;
+  height: 38px;
+  background: rgba(107,74,50,0.10);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-primary);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.add-service-card h5 {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  color: var(--clr-heading);
+  margin-bottom: 0.25rem;
+}
+
+.add-service-card p {
+  font-size: var(--fs-xs);
+  color: var(--clr-body);
+  max-width: none;
+}

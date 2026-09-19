@@ -1,0 +1,102 @@
+/* ============================================================
+   SoleCraft — tablet.css  (768px – 1024px)
+   ============================================================ */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container-sc {
+    padding-inline: 1.5rem;
+  }
+
+  .sc-navbar .navbar-container {
+    padding-inline: 1.5rem;
+  }
+
+  /* Nav links hidden, show hamburger only */
+  .sc-nav-links {
+    display: none;
+  }
+
+  .sc-hamburger {
+    display: flex;
+  }
+
+  /* Hide controls from top bar — they live inside the drawer */
+  .sc-nav-controls .btn-login,
+  .sc-nav-controls .sc-theme-toggle,
+  .sc-nav-controls .sc-rtl-toggle {
+    display: none;
+  }
+
+  /* Hero */
+  .sc-hero {
+    min-height: 75vh;
+  }
+
+  .sc-page-hero {
+    height: 360px;
+  }
+
+  .sc-page-hero .page-hero-content {
+    padding-inline: 1.5rem;
+  }
+
+  /* Grids */
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service-grid-4col {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .additional-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sc-footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-5);
+  }
+
+  /* Forms */
+  .form-row-3 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Services strip */
+  .services-strip {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Auth — Keep Image Panel visible on tablet */
+  .auth-page {
+    grid-template-columns: 42% 58%;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .auth-image-panel {
+    display: block;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  /* Process steps */
+  .process-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Enquiry form */
+  .enquiry-form-wrap {
+    padding: var(--sp-4);
+  }
+}

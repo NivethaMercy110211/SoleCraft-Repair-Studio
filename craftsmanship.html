@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Craftsmanship &amp; Repair Process — SoleCraft Repair Studio</title>
+  <meta name="description" content="Learn how SoleCraft repairs shoes step by step — from assessment to finishing. Meet the tools, materials and craft philosophy behind every repair.">
+  <link rel="canonical" href="craftsmanship.html">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/dark-theme.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/desktop.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/responsive-fixes.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <style>
+    .craft-process-section {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      overflow: hidden;
+    }
+    .process-bg-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(24, 21, 18, 0.85) 0%, rgba(33, 29, 25, 0.89) 100%);
+    }
+    .craft-process-wrap {
+      max-width: 820px;
+      margin: 0 auto;
+      background: rgba(33, 29, 25, 0.82);
+      border: 1px solid rgba(245, 239, 230, 0.16);
+      border-radius: var(--radius-2xl, 24px);
+      padding: clamp(1.5rem, 4vw, 3rem);
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+    .craft-process-section .section-header h2 {
+      color: #F5EFE6;
+    }
+    .craft-process-section .section-header p {
+      color: rgba(245, 239, 230, 0.88);
+    }
+    .craft-process-section .eyebrow {
+      color: var(--clr-accent);
+    }
+    .craft-process-step {
+      display: grid; grid-template-columns: auto 1fr; gap: var(--sp-4);
+      padding: var(--sp-4) 0; border-bottom: 1px solid rgba(245, 239, 230, 0.12);
+      align-items: flex-start;
+    }
+    .craft-process-step:last-of-type { border-bottom: none; }
+    .craft-process-step h3 {
+      font-family: var(--font-heading);
+      font-size: var(--fs-xl);
+      color: #F5EFE6 !important;
+      margin-bottom: 0.35rem;
+    }
+    .craft-process-step p {
+      color: rgba(245, 239, 230, 0.82) !important;
+      font-size: var(--fs-sm);
+      line-height: 1.65;
+      max-width: none;
+    }
+    .step-marker { display: flex; flex-direction: column; align-items: center; gap: var(--sp-2); }
+    .step-line { width: 2px; height: 52px; background: rgba(182, 139, 103, 0.35); border-radius: 2px; }
+    .craft-process-step:last-of-type .step-line { display: none; }
+    /* Workshop Section Styles */
+    .workshop-feature {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: var(--sp-5);
+      background: var(--bg-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      margin-bottom: var(--sp-6);
+      box-shadow: 0 10px 32px rgba(0, 0, 0, 0.04);
+      align-items: center;
+    }
+    .workshop-feature-img {
+      position: relative;
+      height: 380px;
+      overflow: hidden;
+      background: #211D19;
+    }
+    .workshop-feature-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+    .workshop-feature:hover .workshop-feature-img img {
+      transform: scale(1.03);
+    }
+    .workshop-feature-content {
+      padding: clamp(1.5rem, 3vw, 2.5rem);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .workshop-feature-content h3 {
+      font-family: var(--font-heading);
+      font-size: var(--fs-2xl);
+      color: var(--clr-heading);
+      margin-bottom: var(--sp-2);
+    }
+    .workshop-feature-content p {
+      font-size: var(--fs-sm);
+      line-height: 1.7;
+      color: var(--clr-body);
+      margin-bottom: var(--sp-3);
+    }
+    .workshop-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.25rem;
+    }
+    .workshop-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.35rem 0.85rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      background: rgba(107, 74, 50, 0.08);
+      color: var(--clr-primary);
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(107, 74, 50, 0.15);
+    }
+    [data-theme="dark"] .workshop-badge {
+      background: rgba(182, 139, 103, 0.15);
+      color: var(--clr-accent);
+      border-color: rgba(182, 139, 103, 0.25);
+    }
+
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-4);
+    }
+    .tool-card {
+      background: var(--bg-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+    }
+    .tool-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--clr-primary);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    }
+    [data-theme="dark"] .tool-card:hover,
+    [data-theme="dark"] .tool-card:focus-within {
+      background: #3A3028;
+      border-color: var(--clr-primary);
+    }
+    .tool-card-media {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+      background: #2A241F;
+    }
+    .tool-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+    .tool-card:hover .tool-card-media img {
+      transform: scale(1.08);
+    }
+    .tool-card-body {
+      padding: var(--sp-3);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .tool-card h5 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--clr-heading);
+      margin-bottom: 0.35rem;
+    }
+    .tool-card p {
+      font-size: var(--fs-xs);
+      color: var(--clr-body);
+      line-height: 1.55;
+      margin: 0;
+    }
+    .philosophy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-5); align-items: center; }
+    .philosophy-img { border-radius: var(--radius-xl); overflow: hidden; height: 480px; }
+    .philosophy-img img { width:100%;height:100%;object-fit:cover; }
+    @media (max-width: 1024px) {
+      .workshop-feature { grid-template-columns: 1fr; }
+      .workshop-feature-img { height: 300px; }
+      .tools-grid { grid-template-columns: repeat(2,1fr); }
+      .philosophy-grid { grid-template-columns: 1fr; }
+      .philosophy-img { height: 300px; }
+    }
+    @media (min-width: 641px) and (max-width: 1024px) {
+      .workshop-badges { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .workshop-badge { justify-content:center; min-width:0; text-align:center; }
+    }
+    @media (max-width: 640px) {
+      .tools-grid { grid-template-columns: 1fr; }
+      .tool-card-media { height: 210px; }
+    }
+    @media (max-width: 767px) {
+      .craft-process-step { grid-template-columns: auto 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="sc-navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="index.html" class="sc-brand" aria-label="SoleCraft Repair Studio Home"><img src="assets/images/common/logo.png" alt="SoleCraft Repair Studio" class="sc-brand-logo"></a>
+      <ul class="sc-nav-links"><li><a href="index.html" class="nav-link">Home 1</a></li><li><a href="home2.html" class="nav-link">Home 2</a></li><li><a href="about.html" class="nav-link">About</a></li><li><a href="services.html" class="nav-link">Services</a></li><li><a href="pricing.html" class="nav-link">Pricing</a></li><li><a href="before-after.html" class="nav-link">Before &amp; After</a></li><li><a href="craftsmanship.html" class="nav-link active">Craftsmanship</a></li><li><a href="contact.html" class="nav-link">Contact</a></li></ul>
+      <div class="sc-nav-controls"><a href="login.html" class="btn-login">Login</a><button class="sc-icon-btn sc-theme-toggle" aria-label="Toggle theme"><i class="bi bi-moon sc-theme-icon"></i></button><button class="sc-icon-btn sc-rtl-toggle" aria-label="Toggle direction"><span class="sc-rtl-label" style="font-size:0.65rem;font-weight:700;">RTL</span></button><button class="sc-hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
+    </div>
+  </nav>
+  <div class="sc-mobile-menu" id="mobile-menu"><ul class="mobile-nav-links"><li><a href="index.html">Home 1</a></li><li><a href="home2.html">Home 2</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="before-after.html">Before &amp; After</a></li><li><a href="craftsmanship.html" class="active">Craftsmanship</a></li><li><a href="contact.html">Contact</a></li></ul><div class="mobile-controls"><a href="login.html" class="btn-sc btn-secondary-sc btn-sc-sm">Login</a><button class="sc-icon-btn sc-theme-toggle" aria-label="Toggle theme"><i class="bi bi-moon sc-theme-icon"></i></button><button class="sc-icon-btn sc-rtl-toggle" aria-label="Toggle direction"><span class="sc-rtl-label" style="font-size:0.65rem;font-weight:700;">RTL</span></button></div></div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="sc-page-hero">
+  <div class="sc-hero-bg" style="background-image:url('assets/images/hero/craftmanship-banner.png');"></div>
+  <div class="hero-overlay-center" aria-hidden="true"></div>
+  <div class="page-hero-content">
+    <p class="eyebrow">The Art of Repair</p>
+    <h1>Craftsmanship</h1>
+    <p>How we assess, plan, execute and finish every repair — and the tools, materials and philosophy that guide our work.</p>
+  </div>
+</section>
+
+<!-- SECTION 1: The Cobbler's Bench -->
+<section class="section-pad bg-cream" id="bench">
+  <div class="container-sc">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-6);align-items:center;" class="fade-up">
+      <div>
+        <p class="eyebrow">Where It All Begins</p>
+        <div class="sc-divider"></div>
+        <h2>The Cobbler's Bench</h2>
+        <p style="margin-bottom:var(--sp-3);">Every repair begins at the bench. This is where we assess the footwear, examine the wear and make honest decisions about what the repair requires — and what it can realistically achieve.</p>
+        <p>Our bench is stocked not for show, but for use. Every tool here has a specific function in the repair process, and the materials we reach for are chosen to match the shoe's construction, not simply to get the work done quickly.</p>
+      </div>
+      <div style="border-radius:var(--radius-xl);overflow:hidden;height:420px;">
+        <img src="assets/images/craftsmanship/bench-tools.jpg" alt="SoleCraft cobbler's bench with tools, lasts, and materials" loading="lazy" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 2: The 7-Step Process -->
+<section class="section-pad craft-process-section" id="process" style="background-image:url('assets/images/craftsmanship/repair-process-bg.jpg');">
+  <div class="process-bg-overlay" aria-hidden="true"></div>
+  <div class="container-sc" style="position:relative;z-index:2;">
+    <div class="section-header center fade-up">
+      <p class="eyebrow">How Every Repair Works</p>
+      <div class="sc-divider"></div>
+      <h2>The Repair Process — Step by Step</h2>
+      <p>No two repairs are identical, but every repair follows this clear sequence. We do not skip steps. We do not take shortcuts.</p>
+    </div>
+    <div class="craft-process-wrap fade-up stagger-1">
+      <div class="craft-process-step">
+        <div class="step-marker"><div class="step-number">1</div><div class="step-line"></div></div>
+        <div>
+          <h3 style="font-family:var(--font-heading);font-size:var(--fs-2xl);color:#F5EFE6;margin-bottom:0.5rem;">Assessment</h3>
+          <p style="max-width:none;">We inspect the whole shoe — sole wear, heel condition, stitching, leather, lining and hardware. We check visible damage and hidden structural issues, then explain the repair needs and provide an estimate before work begins.</p>
+        </div>
+      </div>
+      <div class="craft-process-step">
+        <div class="step-marker"><div class="step-number">2</div><div class="step-line"></div></div>
+        <div>
+          <h3 style="font-family:var(--font-heading);font-size:var(--fs-2xl);color:#F5EFE6;margin-bottom:0.5rem;">Repair Plan</h3>
+          <p style="max-width:none;">We choose the repair method and materials after assessment. Replacement soles are matched to the shoe's construction and intended use. Before work begins, we explain the plan clearly so the customer knows what will be done and why.</p>
+        </div>
+      </div>
+      <div class="craft-process-step">
+        <div class="step-marker"><div class="step-number">3</div><div class="step-line"></div></div>
+        <div>
+          <h3 style="font-family:var(--font-heading);font-size:var(--fs-2xl);color:#F5EFE6;margin-bottom:0.5rem;">Preparation</h3>
+          <p style="max-width:none;">The damaged components are carefully removed. Surfaces are cleaned, roughed where bonding is required, and primed appropriately. Good preparation is not optional — it is the difference between a repair that holds and one that fails under normal use.</p>
+        </div>
+      </div>
+      <div class="craft-process-step">
+        <div class="step-marker"><div class="step-number">4</div><div class="step-line"></div></div>
+        <div>
+          <h3 style="font-family:var(--font-heading);font-size:var(--fs-2xl);color:#F5EFE6;margin-bottom:0.5rem;">Repair</h3>
+          <p style="max-width:none;">We complete sole, heel, stitching or hardware repairs with tools and techniques suited to the shoe. Machine stitching is used where construction allows; hand stitching is used where access or accuracy requires it.</p>
+        </div>
+      </div>
+      <div class="craft-process-step">
+        <div class="step-marker"><div class="step-number">5</div><div class="step-line"></div></div>
+        <div>
+          <h3 style="font-family:var(--font-heading);font-size:var(--fs-2xl);color:#F5EFE6;margin-bottom:0.5rem;">Finishing</h3>
+          <p style="max-width:none;">The leather is conditioned. Sole edges are bevelled and burnished. Colours are matched and refreshed where needed. Polish is applied as appropriate to the leather type. This stage is not cosmetic — it protects the repair and restores the shoe's overall integrity.</p>
+        </div>
+      </div>
+      <div class="craft-process-step">
+        <div class="step-marker"><div class="step-number">6</div><div class="step-line"></div></div>
+        <div>
+          <h3 style="font-family:var(--font-heading);font-size:var(--fs-2xl);color:#F5EFE6;margin-bottom:0.5rem;">Inspection</h3>
+          <p style="max-width:none;">Every repaired pair goes through a structured final check. We review the repair against what was agreed, check the workmanship and confirm the shoe is ready for regular use. If anything is not right, we address it before the shoes leave the workshop.</p>
+        </div>
+      </div>
+      <div class="craft-process-step">
+        <div class="step-marker"><div class="step-number">7</div></div>
+        <div>
+          <h3 style="font-family:var(--font-heading);font-size:var(--fs-2xl);color:#F5EFE6;margin-bottom:0.5rem;">Ready for Collection</h3>
+          <p style="max-width:none;">The shoes are cleaned, wrapped and set aside for collection. We notify the customer when their footwear is ready and confirm the collection process. The pair that leaves our workshop should look and feel demonstrably better than when it arrived.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: Material Matching -->
+<section class="section-pad bg-beige" id="materials">
+  <div class="container-sc">
+    <div class="section-header center fade-up">
+      <p class="eyebrow">Right Materials, Right Repair</p>
+      <div class="sc-divider"></div>
+      <h2>Material Matching</h2>
+      <p>A repair is only as good as the materials used. We stock a range of professional-grade components and select based on the shoe's construction and intended use — not just availability.</p>
+    </div>
+    <div class="service-grid fade-up stagger-1">
+      <div class="service-card">
+        <div class="service-card-media"><img src="assets/images/services/sole-replacement.jpg" alt="Vibram and leather replacement sole materials" loading="lazy"></div>
+        <div class="service-icon-wrap"><i class="bi bi-layers"></i></div>
+        <h3 class="service-card-title">Sole Materials</h3>
+        <p class="service-card-desc">We stock rubber soles for everyday and outdoor footwear, leather soles for dress shoes and formal footwear, and crepe soles for boots and casual shoes. Selection is based on the original construction wherever possible.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card-media"><img src="assets/images/services/stitching-repair.jpg" alt="Heavy duty waxed thread for leather stitching" loading="lazy"></div>
+        <div class="service-icon-wrap"><i class="bi bi-scissors"></i></div>
+        <h3 class="service-card-title">Thread Selection</h3>
+        <p class="service-card-desc">Waxed linen thread for hand stitching, braided polyester for machine stitching. Thread weight and colour are matched to the original as closely as stock allows. We do not use inferior thread on structural seams. Each seam is checked for strength.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card-media"><img src="assets/images/craftsmanship/materials-display.jpg" alt="Conditioning creams, dyes and polishes on workshop shelves" loading="lazy"></div>
+        <div class="service-icon-wrap"><i class="bi bi-droplet-half"></i></div>
+        <h3 class="service-card-title">Leather Care Products</h3>
+        <p class="service-card-desc">We use professional-grade leather conditioning creams, colour-matched dyes and wax-based polishes. Products are selected for the leather type — smooth, suede and nubuck each require different treatment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 4: Tools of the Trade -->
+<section class="section-pad bg-white" id="tools">
+  <div class="container-sc">
+    <div class="section-header center fade-up">
+      <p class="eyebrow">The Workshop</p>
+      <div class="sc-divider"></div>
+      <h2>Tools of the Trade &amp; Workshop Equipment</h2>
+      <p>Professional shoe repair requires precision equipment. Here is an inside look at our active craft studio and the essential artisan hand tools used daily.</p>
+    </div>
+
+    <!-- Workshop Feature Showcase -->
+    <div class="workshop-feature fade-up">
+      <div class="workshop-feature-img">
+        <img src="assets/images/craftsmanship/workshop-main.jpg" alt="SoleCraft artisan cobbler workshop with heavy stitching machinery and materials" loading="lazy">
+      </div>
+      <div class="workshop-feature-content">
+        <p class="eyebrow" style="margin-bottom:0.25rem;">Craft Studio</p>
+        <h3>Heritage Machinery &amp; Dedicated Workstations</h3>
+        <p>Our workshop is a functional craftsman studio equipped with heavy-duty curved-needle outsole lockstitchers, 5-in-1 rotary sanding and edge burnishing wheels, cast-iron shoe lasts, and pneumatic sole bonding presses. Every workstation is calibrated for precision and lasting durability.</p>
+        <div class="workshop-badges">
+          <span class="workshop-badge"><i class="bi bi-gear-wide-connected"></i> Outsole Lockstitcher</span>
+          <span class="workshop-badge"><i class="bi bi-disc"></i> Rotary Finishing Wheel</span>
+          <span class="workshop-badge"><i class="bi bi-hammer"></i> Cast-Iron Lasting Bench</span>
+          <span class="workshop-badge"><i class="bi bi-layers-half"></i> Sole Pressure Bonding</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core Tools Grid with Real Imagery -->
+    <div class="tools-grid fade-up stagger-1">
+      <!-- 1. Cobbler's Awl -->
+      <div class="tool-card">
+        <div class="tool-card-media">
+          <img src="assets/images/craftsmanship/tools/tool-awl.jpg" alt="Cobbler's Awl piercing thick leather on workbench" loading="lazy">
+        </div>
+        <div class="tool-card-body">
+          <h5>Cobbler's Awl</h5>
+          <p>Hand-turned hardwood awl with hardened carbon blade for piercing dense leather welt seams with pinpoint accuracy.</p>
+        </div>
+      </div>
+
+      <!-- 2. Lasting Hammer -->
+      <div class="tool-card">
+        <div class="tool-card-media">
+          <img src="assets/images/craftsmanship/tools/tool-hammer.jpg" alt="Cobbler lasting hammer on leather shoe upper" loading="lazy">
+        </div>
+        <div class="tool-card-body">
+          <h5>Lasting Hammer</h5>
+          <p>Balanced hammer with polished striking head and curved claw, used to seat leather snugly against wooden shoe lasts.</p>
+        </div>
+      </div>
+
+      <!-- 3. Shoe Lasting Pliers -->
+      <div class="tool-card">
+        <div class="tool-card-media">
+          <img src="assets/images/craftsmanship/tools/tool-pliers.jpg" alt="Shoe lasting pliers pulling leather over wooden last" loading="lazy">
+        </div>
+        <div class="tool-card-body">
+          <h5>Shoe Lasting Pliers</h5>
+          <p>Heavy serrated jaw pincers that grip and pull leather uppers tightly around the insole before lasting and stitching.</p>
+        </div>
+      </div>
+
+      <!-- 4. Edge Beveller -->
+      <div class="tool-card">
+        <div class="tool-card-media">
+          <img src="assets/images/craftsmanship/tools/tool-beveller.jpg" alt="Leather edge beveller trimming sole edge with curled shaving" loading="lazy">
+        </div>
+        <div class="tool-card-body">
+          <h5>Edge Beveller</h5>
+          <p>Micro-grooved hand skiver that carves uniform chamfered edges around fresh leather soles prior to burnishing.</p>
+        </div>
+      </div>
+
+      <!-- 5. Stitching Chisel -->
+      <div class="tool-card">
+        <div class="tool-card-media">
+          <img src="assets/images/craftsmanship/tools/tool-chisel.jpg" alt="Diamond stitching chisel and mallet on shoe welt" loading="lazy">
+        </div>
+        <div class="tool-card-body">
+          <h5>Stitching Chisel</h5>
+          <p>Multi-prong diamond pricking chisel for marking even stitch intervals, ensuring symmetrical, structural seam lines.</p>
+        </div>
+      </div>
+
+      <!-- 6. Channel Opener -->
+      <div class="tool-card">
+        <div class="tool-card-media">
+          <img src="assets/images/craftsmanship/tools/tool-opener.jpg" alt="Channel opener tool lifting leather sole lip" loading="lazy">
+        </div>
+        <div class="tool-card-body">
+          <h5>Channel Opener</h5>
+          <p>Specialized curved lifter that opens the leather incision along the sole perimeter to countersink and protect welt stitches.</p>
+        </div>
+      </div>
+
+      <!-- 7. Edge Iron -->
+      <div class="tool-card">
+        <div class="tool-card-media">
+          <img src="assets/images/craftsmanship/tools/tool-iron.jpg" alt="Heated edge iron burnishing waxed leather sole edge" loading="lazy">
+        </div>
+        <div class="tool-card-body">
+          <h5>Edge Iron</h5>
+          <p>Solid brass heated iron that melds hard carnauba wax into the sole edge, producing a watertight and lustrous seal.</p>
+        </div>
+      </div>
+
+      <!-- 8. Finishing Brushes -->
+      <div class="tool-card">
+        <div class="tool-card-media">
+          <img src="assets/images/craftsmanship/tools/tool-brushes.jpg" alt="Horsehair finishing brushes and waxes on cobbler table" loading="lazy">
+        </div>
+        <div class="tool-card-body">
+          <h5>Finishing Brushes</h5>
+          <p>Pure horsehair bristles and daubers used for uniform wax emulsion penetration and high-shine mirror buffing.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 5: Repair Philosophy -->
+<section class="section-pad bg-cream" id="philosophy">
+  <div class="container-sc">
+    <div class="philosophy-grid">
+      <div class="fade-up">
+        <p class="eyebrow">Our Approach</p>
+        <div class="sc-divider"></div>
+        <h2>Repair Philosophy</h2>
+        <p style="margin-bottom:var(--sp-3);">We are not in the business of making shoes look repaired. We are in the business of making them genuinely better — in structure, in comfort and in appearance. That distinction shapes every decision we make.</p>
+        <p style="margin-bottom:var(--sp-3);">We do not promise results that the material or construction cannot support. We do not use inferior materials to speed up a repair. We do not cut preparation stages because they are time-consuming.</p>
+        <blockquote class="sc-quote" style="margin-top: var(--sp-4);">"A repair that fails in six months is not a repair. It is a delay."</blockquote>
+        <p style="margin-top:var(--sp-3);">This is why we ask questions before we start. It is why the assessment and repair plan stage exists. And it is why we stand behind our work.</p>
+        <div style="margin-top:var(--sp-4);">
+          <a href="contact.html#enquiry" class="btn-sc btn-primary-sc" id="philosophy-cta-btn">Request a Repair</a>
+        </div>
+      </div>
+      <div class="philosophy-img fade-up stagger-1">
+        <img src="assets/images/pages/workshop-wide.jpg" alt="SoleCraft boutique cobbler workshop interior with artisan at work" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESTORATION MASTERY — BEFORE & AFTER -->
+<section class="section-pad bg-white" id="craft-transformations" aria-labelledby="craft-ba-heading">
+  <div class="container-sc">
+    <div class="section-header center fade-up">
+      <p class="eyebrow">Artisan Precision</p>
+      <div class="sc-divider"></div>
+      <h2 id="craft-ba-heading">Restoration Mastery: Before &amp; After</h2>
+      <p>Compare the raw intake wear with our finished artisan restorations. Drag the slider to see the difference traditional craft techniques make.</p>
+    </div>
+    <div class="gallery-grid" style="grid-template-columns: repeat(3, 1fr);">
+      <!-- Card 1 -->
+      <div class="gallery-card fade-up">
+        <div class="ba-container" role="img" aria-label="Before and after of hand-welted seam reconstruction">
+          <div class="ba-after"><img src="assets/images/gallery/stitching-clean-after.jpg" alt="Finished hand-stitched boot welt seam with waxed thread" loading="lazy"></div>
+          <div class="ba-before"><img src="assets/images/gallery/stitching-torn-before.jpg" alt="Ripped split upper boot seam before repair" loading="lazy"></div>
+          <div class="ba-handle" aria-hidden="true"><div class="ba-handle-knob"><i class="bi bi-chevron-expand" style="transform:rotate(90deg)"></i></div></div>
+          <span class="ba-label before" aria-hidden="true">Before</span>
+          <span class="ba-label after" aria-hidden="true">After</span>
+        </div>
+        <div class="gallery-card-info">
+          <div class="gallery-card-label">Hand-Sewn Welt &amp; Seam Repair</div>
+          <div class="gallery-card-meta"><span class="sc-badge sc-badge-dark">STITCHING</span> · Waxed Linen Lockstitch</div>
+          <div class="gallery-card-desc">Torn boot upper realigned and re-anchored into the welt groove with heavy amber waxed linen cord.</div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="gallery-card fade-up stagger-1">
+        <div class="ba-container" role="img" aria-label="Before and after of stacked heel rebuilding">
+          <div class="ba-after"><img src="assets/images/gallery/heel-rebuilt-after.jpg" alt="Stacked leather heel block with brass nails" loading="lazy"></div>
+          <div class="ba-before"><img src="assets/images/gallery/heel-worn-before.jpg" alt="Unevenly worn abraded shoe heel before rebuilding" loading="lazy"></div>
+          <div class="ba-handle" aria-hidden="true"><div class="ba-handle-knob"><i class="bi bi-chevron-expand" style="transform:rotate(90deg)"></i></div></div>
+          <span class="ba-label before" aria-hidden="true">Before</span>
+          <span class="ba-label after" aria-hidden="true">After</span>
+        </div>
+        <div class="gallery-card-info">
+          <div class="gallery-card-label">Stacked Heel &amp; Brass Nailing</div>
+          <div class="gallery-card-meta"><span class="sc-badge sc-badge-primary">HEEL</span> · Leather Lifts</div>
+          <div class="gallery-card-desc">Lopsided heel reconstructed to anatomical balance with stacked oak-bark leather lifts and secure brass nails.</div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="gallery-card fade-up stagger-2">
+        <div class="ba-container" role="img" aria-label="Before and after of suede boot restoration">
+          <div class="ba-after"><img src="assets/images/gallery/suede-restored-after.jpg" alt="Restored velvety suede Chelsea boot with uniform color" loading="lazy"></div>
+          <div class="ba-before"><img src="assets/images/gallery/suede-stained-before.jpg" alt="Heavily soiled stained suede boot before treatment" loading="lazy"></div>
+          <div class="ba-handle" aria-hidden="true"><div class="ba-handle-knob"><i class="bi bi-chevron-expand" style="transform:rotate(90deg)"></i></div></div>
+          <span class="ba-label before" aria-hidden="true">Before</span>
+          <span class="ba-label after" aria-hidden="true">After</span>
+        </div>
+        <div class="gallery-card-info">
+          <div class="gallery-card-label">Suede Cleansing &amp; Nap Revival</div>
+          <div class="gallery-card-meta"><span class="sc-badge sc-badge-accent">SUEDE</span> · Deep De-Staining</div>
+          <div class="gallery-card-desc">Extracted deep water and salt stains, revitalised the velvety nap, and sealed with hydrophobic protective barrier.</div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top: var(--sp-5);">
+      <a href="before-after.html" class="btn-sc btn-secondary-sc" id="craft-view-gallery-btn">Browse Complete Gallery <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section section-pad" style="background-image:url('assets/images/cta/craftsmanship-cta.png');">
+  <div class="cta-overlay" aria-hidden="true"></div>
+  <div class="container-sc cta-content">
+    <p class="eyebrow" style="color:var(--clr-accent);">Experience the Craft</p>
+    <h2 style="color:var(--clr-white);">Bring us a pair worth restoring.</h2>
+    <p>Good shoes deserve proper repair. Bring us the problem and we will give you an honest assessment and a clear plan.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--sp-2);justify-content:center;margin-top:var(--sp-4);">
+      <a href="contact.html#enquiry" class="btn-sc btn-primary-sc btn-sc-lg" id="craft-cta-btn">Request a Repair</a>
+      <a href="before-after.html" class="btn-sc btn-ghost-sc btn-sc-lg" id="craft-gallery-btn">See Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="sc-footer">
+  <div class="container-sc">
+    <div class="sc-footer-grid">
+      <div class="footer-brand"><a href="index.html" class="footer-brand-link" aria-label="SoleCraft home"><img src="assets/images/common/logo-light.png" alt="SoleCraft Repair Studio" class="footer-brand-logo"></a><p>Professional shoe repair and leather restoration. Trusted craftsmanship since 2009.</p><div class="footer-social"><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a><a href="#" aria-label="Google Maps"><i class="bi bi-geo-alt"></i></a></div></div>
+      <div class="footer-col"><h5>Pages</h5><ul><li><a href="index.html">Home 1</a></li><li><a href="home2.html">Home 2</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="before-after.html">Before &amp; After</a></li><li><a href="craftsmanship.html">Craftsmanship</a></li></ul></div>
+      <div class="footer-col"><h5>Services</h5><ul><li><a href="services.html#sole">Sole Replacement</a></li><li><a href="services.html#heel">Heel Repair</a></li><li><a href="services.html#leather">Leather Polishing</a></li><li><a href="services.html#stitching">Shoe Stitching</a></li><li><a href="services.html#stretch">Stretch Fitting</a></li><li><a href="services.html#waterproof">Waterproofing</a></li></ul></div>
+      <div class="footer-col"><h5>Contact &amp; Hours</h5><div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>42 Craftsman Lane, Nungambakkam, Chennai 600 034</span></div><div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><span>+91 98765 43210</span></div><div class="footer-contact-item"><i class="bi bi-envelope-fill"></i><span>hello@solecraftrepair.in</span></div><div class="footer-hours" style="margin-top:0.75rem;"><div class="footer-hours-row"><span class="day">Mon–Fri</span><span>9:00 AM – 7:00 PM</span></div><div class="footer-hours-row"><span class="day">Saturday</span><span>10:00 AM – 5:00 PM</span></div><div class="footer-hours-row"><span class="day">Sunday</span><span>Closed</span></div></div></div>
+    </div>
+    <div class="sc-footer-bottom"><p>&copy; 2026 SoleCraft Repair Studio. All rights reserved.</p><div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+  </div>
+</footer>
+<button id="scroll-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+<script src="js/main.js"></script>
+<script src="js/gallery.js"></script>
+</body>
+</html>

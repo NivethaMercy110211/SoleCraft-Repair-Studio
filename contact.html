@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Repair Enquiry — SoleCraft Repair Studio</title>
+  <meta name="description" content="Contact SoleCraft Repair Studio for a repair enquiry, directions, drop-off hours, phone or email. Request an estimate by uploading photos of your footwear.">
+  <link rel="canonical" href="contact.html">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/dark-theme.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/desktop.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/responsive-fixes.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <style>
+    .contact-sidebar { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-areas:"info hours" "tips hours"; gap:var(--sp-4); align-items:stretch; }
+    .contact-sidebar > .contact-info-card:first-child { grid-area:info; }
+    .contact-sidebar > #timings { grid-area:hours; }
+    .contact-sidebar > .contact-info-card:last-child { grid-area:tips; }
+    .contact-form-column { max-width:820px; margin-inline:auto; }
+    .contact-info-card { background:var(--bg-card); border:1px solid var(--clr-border); border-radius:var(--radius-lg); padding:var(--sp-4); }
+    .contact-info-card .footer-contact-item { color:var(--clr-body); }
+    .contact-info-card h4 { font-family:var(--font-heading); font-size:var(--fs-xl); color:var(--clr-heading); margin-bottom:var(--sp-2); }
+    .map-placeholder { background:var(--bg-card); border:1px solid var(--clr-border); border-radius:var(--radius-lg); overflow:hidden; position:relative; height:360px; }
+    .map-placeholder i { font-size:2.5rem; color:var(--clr-primary); }
+    .map-placeholder p { font-size:var(--fs-sm); color:var(--clr-body); text-align:center; max-width:none; }
+    .visit-tips { list-style:none; padding:0; margin:0; display:grid; gap:0.75rem; }
+    .visit-tips li { display:flex; align-items:flex-start; gap:0.625rem; color:var(--clr-body); font-size:var(--fs-sm); }
+    .visit-tips i { color:var(--clr-primary); flex-shrink:0; }
+    .faq-section { max-width:760px; margin:0 auto; }
+    #faq { margin-top:var(--sp-5); border-top:2px solid var(--clr-accent); }
+    @media (max-width:1023px) { .contact-sidebar { grid-template-columns:minmax(0,1fr); grid-template-areas:"info" "hours" "tips"; } }
+    @media (min-width:1024px) { #timings { display:grid; grid-template-rows:auto repeat(7,minmax(0,1fr)); } }
+    @media (max-width:767px) { .map-placeholder { height:280px; } }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="sc-navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="index.html" class="sc-brand" aria-label="SoleCraft Repair Studio Home"><img src="assets/images/common/logo.png" alt="SoleCraft Repair Studio" class="sc-brand-logo"></a>
+      <ul class="sc-nav-links"><li><a href="index.html" class="nav-link">Home 1</a></li><li><a href="home2.html" class="nav-link">Home 2</a></li><li><a href="about.html" class="nav-link">About</a></li><li><a href="services.html" class="nav-link">Services</a></li><li><a href="pricing.html" class="nav-link">Pricing</a></li><li><a href="before-after.html" class="nav-link">Before &amp; After</a></li><li><a href="craftsmanship.html" class="nav-link">Craftsmanship</a></li><li><a href="contact.html" class="nav-link active">Contact</a></li></ul>
+      <div class="sc-nav-controls"><a href="login.html" class="btn-login">Login</a><button class="sc-icon-btn sc-theme-toggle" aria-label="Toggle theme"><i class="bi bi-moon sc-theme-icon"></i></button><button class="sc-icon-btn sc-rtl-toggle" aria-label="Toggle direction"><span class="sc-rtl-label" style="font-size:0.65rem;font-weight:700;">RTL</span></button><button class="sc-hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
+    </div>
+  </nav>
+  <div class="sc-mobile-menu" id="mobile-menu"><ul class="mobile-nav-links"><li><a href="index.html">Home 1</a></li><li><a href="home2.html">Home 2</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="before-after.html">Before &amp; After</a></li><li><a href="craftsmanship.html">Craftsmanship</a></li><li><a href="contact.html" class="active">Contact</a></li></ul><div class="mobile-controls"><a href="login.html" class="btn-sc btn-secondary-sc btn-sc-sm">Login</a><button class="sc-icon-btn sc-theme-toggle" aria-label="Toggle theme"><i class="bi bi-moon sc-theme-icon"></i></button><button class="sc-icon-btn sc-rtl-toggle" aria-label="Toggle direction"><span class="sc-rtl-label" style="font-size:0.65rem;font-weight:700;">RTL</span></button></div></div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="sc-page-hero">
+  <div class="sc-hero-bg" style="background-image:url('assets/images/hero/contact-banner.png');"></div>
+  <div class="hero-overlay-center" aria-hidden="true"></div>
+  <div class="page-hero-content">
+    <p class="eyebrow">Get in Touch</p>
+    <h1>Contact &amp; Repair Enquiry</h1>
+    <p>Walk in, call ahead or send an enquiry with photos. Our standard assessment is always free — no obligation to proceed.</p>
+  </div>
+</section>
+
+<!-- CONTACT DETAILS -->
+<section class="section-pad bg-cream" id="contact-details">
+  <div class="container-sc">
+      <div class="contact-sidebar fade-up">
+        <!-- Contact Info -->
+        <div class="contact-info-card">
+          <h4><i class="bi bi-pin-map-fill" style="color:var(--clr-primary);margin-right:0.5rem;"></i>Find Us</h4>
+          <div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>42 Craftsman Lane, Nungambakkam<br>Chennai 600 034, Tamil Nadu</span></div>
+          <div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><span><a href="tel:+919876543210" style="color:var(--clr-primary);font-weight:600;">+91 98765 43210</a></span></div>
+          <div class="footer-contact-item"><i class="bi bi-envelope-fill"></i><span><a href="mailto:hello@solecraftrepair.in" style="color:var(--clr-primary);font-weight:600;">hello@solecraftrepair.in</a></span></div>
+          <div class="footer-contact-item"><i class="bi bi-whatsapp"></i><span><a href="https://wa.me/919876543210" style="color:var(--clr-primary);font-weight:600;">WhatsApp Us</a></span></div>
+        </div>
+
+        <!-- Drop-off Hours -->
+        <div class="timings-table" id="timings" aria-label="Drop-off and collection hours">
+          <div class="timings-header"><i class="bi bi-clock" aria-hidden="true"></i><h4>Drop-Off Hours</h4></div>
+          <div class="timings-row"><span class="day-name">Monday</span><span class="hours">9:00 AM – 7:00 PM</span></div>
+          <div class="timings-row"><span class="day-name">Tuesday</span><span class="hours">9:00 AM – 7:00 PM</span></div>
+          <div class="timings-row"><span class="day-name">Wednesday</span><span class="hours">9:00 AM – 7:00 PM</span></div>
+          <div class="timings-row"><span class="day-name">Thursday</span><span class="hours">9:00 AM – 7:00 PM</span></div>
+          <div class="timings-row"><span class="day-name">Friday</span><span class="hours">9:00 AM – 7:00 PM</span></div>
+          <div class="timings-row"><span class="day-name">Saturday</span><span class="hours">10:00 AM – 5:00 PM</span></div>
+          <div class="timings-row closed"><span class="day-name">Sunday</span><span class="hours">Closed</span></div>
+        </div>
+
+        <div class="contact-info-card">
+          <h4><i class="bi bi-bag-check" style="color:var(--clr-primary);margin-right:0.5rem;" aria-hidden="true"></i>Before You Visit</h4>
+          <ul class="visit-tips">
+            <li><i class="bi bi-check-circle" aria-hidden="true"></i><span>Bring both shoes, even if only one needs repair.</span></li>
+            <li><i class="bi bi-check-circle" aria-hidden="true"></i><span>Show us where the damage or discomfort occurs.</span></li>
+            <li><i class="bi bi-check-circle" aria-hidden="true"></i><span>Bring any loose parts or hardware if you still have them.</span></li>
+          </ul>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- LOCATION MAP -->
+<section class="section-pad bg-white" id="location-map" aria-labelledby="location-map-heading">
+  <div class="container-sc">
+    <div class="section-header center">
+      <p class="eyebrow">Our Location</p>
+      <div class="sc-divider"></div>
+      <h2 id="location-map-heading">Find Our Workshop</h2>
+      <p>Nungambakkam, Chennai</p>
+    </div>
+    <div class="map-placeholder fade-up">
+      <img src="assets/nungambakkam-map.svg" alt="Illustrative map preview of Nungambakkam, Chennai" width="800" height="360" style="width:100%;height:100%;display:block;object-fit:cover;">
+      <div style="position:absolute;bottom:10px;left:10px;right:10px;background:var(--bg-card);padding:6px 12px;border-radius:var(--radius-md);display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:var(--shadow-sm);border:1px solid var(--clr-border);">
+        <span style="font-size:0.75rem;font-weight:600;color:var(--clr-heading);"><i class="bi bi-geo-alt-fill" style="color:var(--clr-primary);margin-right:4px;"></i>Nungambakkam, Chennai</span>
+        <a href="https://maps.google.com/?q=Nungambakkam,Chennai" target="_blank" rel="noopener noreferrer" class="btn-sc btn-primary-sc" style="padding:4px 10px;font-size:0.7rem;flex-shrink:0;" id="get-directions-btn">Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENQUIRY FORM -->
+<section class="section-pad bg-cream" id="enquiry">
+  <div class="container-sc">
+      <div class="contact-form-column fade-up stagger-1">
+        <div class="section-header center" style="margin-bottom:var(--sp-4);">
+          <p class="eyebrow">Request a Repair Estimate</p>
+          <div class="sc-divider"></div>
+          <h2>Send Us an Enquiry</h2>
+          <p>Fill in the details below and upload photos of the damage. We will review and respond with an initial estimate within one business day.</p>
+        </div>
+
+        <form class="sc-enquiry-form enquiry-form-wrap" id="repair-enquiry-form" novalidate aria-label="Repair enquiry form">
+
+          <div class="form-row-2">
+            <div class="sc-form-group">
+              <label class="sc-form-label" for="contact-name">Full Name <span class="required" aria-label="required">*</span></label>
+              <input class="sc-form-control" type="text" id="contact-name" name="name" placeholder="Your full name" required autocomplete="name">
+              <span class="form-error" role="alert">Please enter your full name.</span>
+            </div>
+            <div class="sc-form-group">
+              <label class="sc-form-label" for="contact-phone">Phone Number</label>
+              <input class="sc-form-control" type="tel" id="contact-phone" name="phone" placeholder="+91 00000 00000" autocomplete="tel">
+              <span class="form-error" role="alert">Please enter a valid phone number.</span>
+            </div>
+          </div>
+
+          <div class="sc-form-group">
+            <label class="sc-form-label" for="contact-email">Email Address <span class="required" aria-label="required">*</span></label>
+            <input class="sc-form-control" type="email" id="contact-email" name="email" placeholder="your@email.com" required autocomplete="email">
+            <span class="form-error" role="alert">Please enter a valid email address.</span>
+          </div>
+
+          <div class="form-row-2">
+            <div class="sc-form-group">
+              <label class="sc-form-label" for="repair-service">Type of Repair <span class="required" aria-label="required">*</span></label>
+              <select class="sc-form-control" id="repair-service" name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="sole">Sole Replacement</option>
+                <option value="heel">Heel Repair</option>
+                <option value="leather">Leather Polishing / Restoration</option>
+                <option value="stitching">Shoe Stitching</option>
+                <option value="stretch">Stretch Fitting</option>
+                <option value="waterproof">Waterproofing</option>
+                <option value="zipper">Zipper / Hardware Repair</option>
+                <option value="cleaning">Shoe Cleaning</option>
+                <option value="other">Other / Multiple Repairs</option>
+              </select>
+              <span class="form-error" role="alert">Please select a repair type.</span>
+            </div>
+            <div class="sc-form-group">
+              <label class="sc-form-label" for="shoe-type">Footwear Type</label>
+              <select class="sc-form-control" id="shoe-type" name="shoe_type">
+                <option value="" disabled selected>Select footwear type</option>
+                <option value="oxford">Oxford / Brogue</option>
+                <option value="boot">Ankle / Chelsea Boot</option>
+                <option value="heel">High Heel</option>
+                <option value="casual">Casual / Sneaker</option>
+                <option value="sandal">Sandal</option>
+                <option value="loafer">Loafer</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="sc-form-group">
+            <label class="sc-form-label" for="repair-description">Describe the Damage <span class="required" aria-label="required">*</span></label>
+            <textarea class="sc-form-control" id="repair-description" name="description" rows="4" placeholder="Describe what has happened to the footwear — where the damage is, how long it has been like this, and anything specific you want addressed." required></textarea>
+            <span class="form-error" role="alert">Please describe the damage.</span>
+          </div>
+
+          <div class="sc-form-group">
+            <label class="sc-form-label">Upload Photos (Optional)</label>
+            <div class="file-upload-area" id="photo-upload-area">
+              <input type="file" id="shoe-photos" name="photos" accept="image/*" multiple aria-label="Upload photos of damaged footwear">
+              <div class="file-upload-icon"><i class="bi bi-camera" aria-hidden="true"></i></div>
+              <p>Click to upload photos, or drag and drop</p>
+              <p class="hint">JPG, PNG or WEBP · Max 5MB per file · Up to 5 images</p>
+            </div>
+            <div class="file-preview-list" id="photo-preview-list" aria-label="Uploaded photos"></div>
+          </div>
+
+          <div class="sc-form-group">
+            <label class="sc-form-label" for="contact-pref">Preferred Contact Method</label>
+            <select class="sc-form-control" id="contact-pref" name="contact_pref">
+              <option value="email">Email</option>
+              <option value="phone">Phone Call</option>
+              <option value="whatsapp">WhatsApp</option>
+            </select>
+          </div>
+
+          <!-- Form feedback -->
+          <div class="form-message success" role="alert"><i class="bi bi-check-circle-fill" aria-hidden="true"></i> Thank you! We will review your enquiry and respond within one business day.</div>
+          <div class="form-message error" role="alert"><i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i> Please check all required fields and try again.</div>
+
+          <div>
+            <button type="submit" class="btn-sc btn-primary-sc btn-sc-lg" id="enquiry-submit-btn" style="width:100%;justify-content:center;">
+              <i class="bi bi-send" aria-hidden="true"></i> Request Repair Estimate
+            </button>
+            <p class="form-hint" style="margin-top:0.5rem;text-align:center;">No payment required. We will assess and respond with an estimate before any work begins.</p>
+          </div>
+        </form>
+      </div>
+  </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="section-pad bg-white" id="faq" aria-labelledby="faq-heading">
+  <div class="container-sc">
+    <div class="section-header center fade-up">
+      <p class="eyebrow">Questions</p>
+      <div class="sc-divider"></div>
+      <h2 id="faq-heading">Common Questions</h2>
+    </div>
+    <div class="faq-section sc-accordion fade-up stagger-1" aria-label="Frequently asked questions">
+      <div class="sc-accordion-item">
+        <button class="sc-accordion-header" aria-expanded="false">How do I get my shoes assessed?<i class="bi bi-chevron-down" aria-hidden="true"></i></button>
+        <div class="sc-accordion-body">Walk in during drop-off hours — no appointment needed for standard assessments. If you have a complex repair or multiple pairs, calling ahead helps us prepare. You can also use the enquiry form above and upload photos for an initial assessment without visiting in person.</div>
+      </div>
+      <div class="sc-accordion-item">
+        <button class="sc-accordion-header" aria-expanded="false">Is the assessment free?<i class="bi bi-chevron-down" aria-hidden="true"></i></button>
+        <div class="sc-accordion-body">Yes. The in-workshop assessment and estimate are always free and carry no obligation to proceed with the repair. We will examine your footwear, explain what we find and give you a clear price — you decide whether to go ahead.</div>
+      </div>
+      <div class="sc-accordion-item">
+        <button class="sc-accordion-header" aria-expanded="false">How long does a repair typically take?<i class="bi bi-chevron-down" aria-hidden="true"></i></button>
+        <div class="sc-accordion-body">It depends on the repair. Minor heel tip replacements and some cleaning may be same-day. Standard repairs — sole replacement, seam repair, leather conditioning — are typically 1–3 business days. Complex restoration work requiring re-dyeing or structural work may take 4–7 business days. We give a realistic estimate at drop-off and notify you when the shoes are ready.</div>
+      </div>
+      <div class="sc-accordion-item">
+        <button class="sc-accordion-header" aria-expanded="false">Do you repair all types of footwear?<i class="bi bi-chevron-down" aria-hidden="true"></i></button>
+        <div class="sc-accordion-body">We work on most leather and non-leather footwear — Oxfords, Chelsea boots, high heels, casual shoes, suede shoes, loafers and more. We will always tell you honestly if a repair is outside what we can address — for example, moulded athletic soles or certain synthetic materials that cannot be reliably bonded or stitched.</div>
+      </div>
+      <div class="sc-accordion-item">
+        <button class="sc-accordion-header" aria-expanded="false">Can you match the original sole material or colour?<i class="bi bi-chevron-down" aria-hidden="true"></i></button>
+        <div class="sc-accordion-body">We make every effort to match sole material, thickness and colour to the original construction. We carry a range of rubber, leather and synthetic sole options. For unusual constructions or rare materials, we will advise on the closest available match before starting work.</div>
+      </div>
+      <div class="sc-accordion-item">
+        <button class="sc-accordion-header" aria-expanded="false">Do you provide a guarantee on your repairs?<i class="bi bi-chevron-down" aria-hidden="true"></i></button>
+        <div class="sc-accordion-body">We stand behind our work. If a repair we performed fails within a reasonable period under normal use — not due to further damage, misuse or unreasonable wear — we will address it. Bring the shoes back and we will review what happened and decide on the appropriate response. We do not offer a blanket time-based guarantee because repair lifespans depend heavily on how the footwear is used after the repair.</div>
+      </div>
+      <div class="sc-accordion-item">
+        <button class="sc-accordion-header" aria-expanded="false">Can I send photos before visiting?<i class="bi bi-chevron-down" aria-hidden="true"></i></button>
+        <div class="sc-accordion-body">Yes. Use the enquiry form above or send photos via WhatsApp to +91 98765 43210. We can give you an initial assessment and a likely price range from photos alone — though the final confirmation is always given in person once we have examined the shoes directly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT CTA -->
+<section class="cta-section section-pad" style="background-image:url('assets/images/cta/contact-cta.png');">
+  <div class="cta-overlay" aria-hidden="true"></div>
+  <div class="container-sc cta-content">
+    <p class="eyebrow" style="color:var(--clr-accent);">Ready to Restore?</p>
+    <h2 style="color:var(--clr-white);margin-bottom:var(--sp-2);">Visit our workshop or send us your footwear.</h2>
+    <p>Our standard assessment is always free — walk in during open hours or drop us an enquiry with photos.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--sp-2);justify-content:center;margin-top:var(--sp-4);">
+      <a href="#enquiry" class="btn-sc btn-primary-sc btn-sc-lg">Send an Enquiry</a>
+      <a href="pricing.html" class="btn-sc btn-ghost-sc btn-sc-lg">View Pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="sc-footer">
+  <div class="container-sc">
+    <div class="sc-footer-grid">
+      <div class="footer-brand"><a href="index.html" class="footer-brand-link" aria-label="SoleCraft home"><img src="assets/images/common/logo-light.png" alt="SoleCraft Repair Studio" class="footer-brand-logo"></a><p>Professional shoe repair and leather restoration. Trusted craftsmanship since 2009.</p><div class="footer-social"><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a><a href="#" aria-label="Google Maps"><i class="bi bi-geo-alt"></i></a></div></div>
+      <div class="footer-col"><h5>Pages</h5><ul><li><a href="index.html">Home 1</a></li><li><a href="home2.html">Home 2</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="before-after.html">Before &amp; After</a></li><li><a href="craftsmanship.html">Craftsmanship</a></li></ul></div>
+      <div class="footer-col"><h5>Services</h5><ul><li><a href="services.html#sole">Sole Replacement</a></li><li><a href="services.html#heel">Heel Repair</a></li><li><a href="services.html#leather">Leather Polishing</a></li><li><a href="services.html#stitching">Shoe Stitching</a></li><li><a href="services.html#stretch">Stretch Fitting</a></li><li><a href="services.html#waterproof">Waterproofing</a></li></ul></div>
+      <div class="footer-col"><h5>Contact &amp; Hours</h5><div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>42 Craftsman Lane, Nungambakkam, Chennai 600 034</span></div><div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><span>+91 98765 43210</span></div><div class="footer-contact-item"><i class="bi bi-envelope-fill"></i><span>hello@solecraftrepair.in</span></div><div class="footer-hours" style="margin-top:0.75rem;"><div class="footer-hours-row"><span class="day">Mon–Fri</span><span>9:00 AM – 7:00 PM</span></div><div class="footer-hours-row"><span class="day">Saturday</span><span>10:00 AM – 5:00 PM</span></div><div class="footer-hours-row"><span class="day">Sunday</span><span>Closed</span></div></div></div>
+    </div>
+    <div class="sc-footer-bottom"><p>&copy; 2026 SoleCraft Repair Studio. All rights reserved.</p><div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+  </div>
+</footer>
+<button id="scroll-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+<script src="js/main.js"></script>
+<script src="js/forms.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+/* ============================================================
+   SoleCraft — desktop.css  (1440px+ overrides)
+   ============================================================ */
+
+@media (min-width: 1440px) {
+  .container-sc {
+    padding-inline: 2.5rem;
+  }
+
+  .sc-hero {
+    min-height: 90vh;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .service-grid-4col {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .additional-services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

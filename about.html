@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About SoleCraft Repair Studio — Our Story &amp; Workshop</title>
+  <meta name="description" content="Learn about SoleCraft Repair Studio — our history, craftsmanship values, repair philosophy, the materials we work with and our commitment to local service.">
+  <link rel="canonical" href="about.html">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/dark-theme.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/desktop.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/responsive-fixes.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <style>
+    .about-split { display:grid; grid-template-columns:1fr 1fr; gap:var(--sp-6); align-items:center; }
+    .about-split.image-first .about-img { order:1; }
+    .about-split.image-first .about-text { order:2; }
+    .about-split.reverse .about-img { order:2; }
+    .about-split.reverse .about-text { order:1; }
+    .about-img { border-radius:var(--radius-xl); overflow:hidden; height:440px; }
+    .about-img img { width:100%;height:100%;object-fit:cover; }
+    .about-text p { max-width:none; }
+    .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--sp-3); }
+    .value-card { background:var(--bg-card); border:1px solid var(--clr-border); border-radius:var(--radius-lg); padding:var(--sp-4); }
+    .value-card i { font-size:1.75rem; color:var(--clr-primary); margin-bottom:var(--sp-2); }
+    .value-card h4 { font-family:var(--font-heading); font-size:var(--fs-xl); color:var(--clr-heading); margin-bottom:0.25rem; }
+    .value-card p { font-size:var(--fs-sm); max-width:none; }
+    .workshop-gallery { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    .workshop-gallery-item { border-radius:var(--radius-lg); overflow:hidden; height:220px; }
+    .workshop-gallery-item img { width:100%;height:100%;object-fit:cover; transition: transform var(--transition-slow); }
+    .workshop-gallery-item:hover img { transform:scale(1.05); }
+    .about-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--sp-4);
+      margin-top: var(--sp-6);
+      padding: var(--sp-5);
+      border-radius: var(--radius-xl);
+      background: #6B4A32;
+    }
+    .about-stats-grid .stat-number { color: #F5EFE6; }
+    .about-stats-grid .stat-label { color: #F5EFE6; }
+    @media (max-width: 1024px) {
+      .about-split { grid-template-columns:1fr; }
+      .about-img { height:300px; order:0 !important; }
+      .about-text { order:1 !important; }
+      .values-grid { grid-template-columns:repeat(2,1fr); }
+      .workshop-gallery { grid-template-columns:repeat(2,1fr); }
+      .about-stats-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    }
+    @media (max-width:767px) {
+      .values-grid { grid-template-columns:1fr; }
+      .workshop-gallery { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <nav class="sc-navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <a href="index.html" class="sc-brand" aria-label="SoleCraft Repair Studio Home"><img src="assets/images/common/logo.png" alt="SoleCraft Repair Studio" class="sc-brand-logo"></a>
+      <ul class="sc-nav-links"><li><a href="index.html" class="nav-link">Home 1</a></li><li><a href="home2.html" class="nav-link">Home 2</a></li><li><a href="about.html" class="nav-link active">About</a></li><li><a href="services.html" class="nav-link">Services</a></li><li><a href="pricing.html" class="nav-link">Pricing</a></li><li><a href="before-after.html" class="nav-link">Before &amp; After</a></li><li><a href="craftsmanship.html" class="nav-link">Craftsmanship</a></li><li><a href="contact.html" class="nav-link">Contact</a></li></ul>
+      <div class="sc-nav-controls"><a href="login.html" class="btn-login">Login</a><button class="sc-icon-btn sc-theme-toggle" aria-label="Toggle theme"><i class="bi bi-moon sc-theme-icon"></i></button><button class="sc-icon-btn sc-rtl-toggle" aria-label="Toggle direction"><span class="sc-rtl-label" style="font-size:0.65rem;font-weight:700;">RTL</span></button><button class="sc-hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button></div>
+    </div>
+  </nav>
+  <div class="sc-mobile-menu" id="mobile-menu"><ul class="mobile-nav-links"><li><a href="index.html">Home 1</a></li><li><a href="home2.html">Home 2</a></li><li><a href="about.html" class="active">About</a></li><li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="before-after.html">Before &amp; After</a></li><li><a href="craftsmanship.html">Craftsmanship</a></li><li><a href="contact.html">Contact</a></li></ul><div class="mobile-controls"><a href="login.html" class="btn-sc btn-secondary-sc btn-sc-sm">Login</a><button class="sc-icon-btn sc-theme-toggle" aria-label="Toggle theme"><i class="bi bi-moon sc-theme-icon"></i></button><button class="sc-icon-btn sc-rtl-toggle" aria-label="Toggle direction"><span class="sc-rtl-label" style="font-size:0.65rem;font-weight:700;">RTL</span></button></div></div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="sc-page-hero">
+  <div class="sc-hero-bg" style="background-image:url('assets/images/hero/about-banner.png');"></div>
+  <div class="hero-overlay-center" aria-hidden="true"></div>
+  <div class="page-hero-content">
+    <p class="eyebrow">The Workshop Behind the Work</p>
+    <h1>About SoleCraft</h1>
+    <p>A local repair studio built on honest craft, quality materials and straightforward service. No gimmicks — just good repair work done well.</p>
+  </div>
+</section>
+
+<!-- OUR STORY -->
+<section class="section-pad bg-cream" id="story">
+  <div class="container-sc">
+    <div class="about-split image-first">
+      <div class="about-text fade-up">
+        <p class="eyebrow">How It Began</p>
+        <div class="sc-divider"></div>
+        <h2>Our Story</h2>
+        <p style="margin-bottom:var(--sp-3);">SoleCraft opened in 2009 with a simple idea: that quality shoes deserve proper repair, and that customers deserve honest advice about what is and is not possible. We started as a small bench operation with a handful of tools and a clear commitment to doing the work properly.</p>
+        <p style="margin-bottom:var(--sp-3);">Over fifteen years, the workshop has grown — in equipment, in skill range and in the breadth of repairs we perform. But the approach has not changed. Every pair that arrives gets assessed honestly. Every estimate is explained before work begins. Every repaired pair goes through inspection before collection.</p>
+        <p>We are a local business. Our customers are local. The relationship between a good cobbler and a local community is built on trust over time — and that is the standard we hold ourselves to.</p>
+      </div>
+      <div class="about-img fade-up stagger-1">
+        <img src="assets/images/pages/about.jpg" alt="SoleCraft workshop interior with artisan cobbler at work" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY WE REPAIR -->
+<section class="section-pad bg-white" id="why">
+  <div class="container-sc">
+    <div class="about-split reverse">
+      <div class="about-img fade-up">
+        <img src="assets/images/pages/why-repair.jpg" alt="Heritage leather boots with restored Vibram resole and rich patina" loading="lazy">
+      </div>
+      <div class="about-text fade-up stagger-1">
+        <p class="eyebrow">The Case for Repair</p>
+        <div class="sc-divider"></div>
+        <h2>Why We Repair</h2>
+        <p style="margin-bottom:var(--sp-3);">The culture of replacing rather than repairing is expensive, wasteful and often unnecessary. A pair of quality shoes — properly constructed from decent materials — can last decades with appropriate care and timely repair.</p>
+        <p style="margin-bottom:var(--sp-3);">We repair because good shoes matter. A pair of well-made leather Oxfords represents an investment in quality and comfort. When the sole wears through or a seam fails, that is not the end of the shoe — it is a repair that any competent cobbler can address.</p>
+        <p>We also repair because broken-in footwear has a comfort that a new pair simply does not yet have. There is practical value in maintaining what you already own and what already fits you well.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="section-pad bg-beige" id="values">
+  <div class="container-sc">
+    <div class="section-header center fade-up">
+      <p class="eyebrow">What Guides Us</p>
+      <div class="sc-divider"></div>
+      <h2>Quality Standards</h2>
+    </div>
+    <div class="values-grid fade-up stagger-1">
+      <div class="value-card"><i class="bi bi-search"></i><h4>Honest Assessment</h4><p>We do not tell customers what they want to hear about a repair. We tell them what the shoe needs and what the repair can realistically achieve — before any work begins.</p></div>
+      <div class="value-card"><i class="bi bi-layers"></i><h4>Right Materials</h4><p>We select materials that suit the shoe's construction and intended use. A cheap sole that fails in three months is not a repair — it is a delay. Our choices are made for lasting wear.</p></div>
+      <div class="value-card"><i class="bi bi-check2-circle"></i><h4>Finished Work</h4><p>Every repair includes appropriate finishing — edge bevelling, conditioning, polishing — as part of the standard. Finishing is not an optional extra. The details matter to us.</p></div>
+      <div class="value-card"><i class="bi bi-clock-history"></i><h4>Realistic Timelines</h4><p>We give honest turnaround estimates. We do not overpromise and underdeliver. If a repair will take three days, we say three days and keep you updated if anything changes.</p></div>
+      <div class="value-card"><i class="bi bi-shield-check"></i><h4>Work We Stand Behind</h4><p>If something we repaired fails within a reasonable period under normal use, we address it. We back our work because we are confident in how it is done.</p></div>
+      <div class="value-card"><i class="bi bi-people"></i><h4>Local Service</h4><p>We are part of this community. We recognise our customers. We remember their footwear. That kind of relationship takes years to build — and we take it seriously.</p></div>
+    </div>
+    <div class="about-stats-grid" id="about-stats">
+      <div class="stat-block fade-up"><div class="stat-number">2009</div><div class="stat-label">Year Established</div></div>
+      <div class="stat-block fade-up stagger-1"><div class="stat-number">5,000+</div><div class="stat-label">Repairs Completed</div></div>
+      <div class="stat-block fade-up stagger-2"><div class="stat-number">10+</div><div class="stat-label">Services Offered</div></div>
+      <div class="stat-block fade-up stagger-3"><div class="stat-number">4.9★</div><div class="stat-label">Average Rating</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKSHOP -->
+<section class="section-pad bg-white" id="workshop">
+  <div class="container-sc">
+    <div class="section-header center fade-up">
+      <p class="eyebrow">The Physical Space</p>
+      <div class="sc-divider"></div>
+      <h2>Our Workshop</h2>
+      <p>A working cobbler's workshop — functional, well-stocked and built around the actual work of shoe repair. Not a boutique, not a showroom.</p>
+    </div>
+    <div class="workshop-gallery fade-up stagger-1">
+      <div class="workshop-gallery-item"><img src="assets/images/craftsmanship/bench-tools.jpg" alt="Cobbler's bench with authentic tools, lasts, and repair work" loading="lazy"></div>
+      <div class="workshop-gallery-item"><img src="assets/images/pages/workshop-wide.jpg" alt="SoleCraft workshop interior with shoe storage shelves and active craftsman" loading="lazy"></div>
+      <div class="workshop-gallery-item"><img src="assets/images/craftsmanship/materials-display.jpg" alt="Shelves of leather hides, Vibram soles, and repair materials" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCAL SERVICE -->
+<section class="section-pad bg-cream" id="local">
+  <div class="container-sc">
+    <div class="about-split image-first">
+      <div class="about-text fade-up">
+        <p class="eyebrow">Part of the Community</p>
+        <div class="sc-divider"></div>
+        <h2>Local Customer Service</h2>
+        <p style="margin-bottom:var(--sp-3);">We are not a franchise. We are not a chain. We are an independent local workshop that has served this community for fifteen years. We remember the pair of brogues you brought in two years ago. We know which customers have difficult heels. We care about the quality of the work because our reputation depends on it in a direct and personal way.</p>
+        <p style="margin-bottom:var(--sp-3);">Walk-in customers are always welcome for assessment. If you are unsure whether a repair is worth attempting, bring the shoes in and we will give you an honest answer — at no charge for the assessment itself.</p>
+        <p>Drop-off and collection are straightforward. We keep clear records, issue repair tickets and notify customers when their footwear is ready.</p>
+        <div style="margin-top:var(--sp-4);display:flex;gap:var(--sp-2);flex-wrap:wrap;">
+          <a href="contact.html" class="btn-sc btn-primary-sc" id="about-contact-btn">Contact Us</a>
+          <a href="contact.html#timings" class="btn-sc btn-secondary-sc" id="about-hours-btn">View Drop-Off Hours</a>
+        </div>
+      </div>
+      <div class="about-img fade-up stagger-1">
+        <img src="assets/images/pages/contact.jpg" alt="Welcoming cobbler shop counter with restored shoes ready for collection" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-section section-pad" style="background-image:url('assets/images/cta/about-cta.png');">
+  <div class="cta-overlay" aria-hidden="true"></div>
+  <div class="container-sc cta-content">
+    <p class="eyebrow" style="color:var(--clr-accent);">Ready to Restore?</p>
+    <h2 style="color:var(--clr-white);">Bring us your footwear. We will handle the rest.</h2>
+    <p>Walk in during drop-off hours, send us an enquiry or call ahead. Assessment is always free.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--sp-2);justify-content:center;margin-top:var(--sp-4);">
+      <a href="contact.html#enquiry" class="btn-sc btn-primary-sc btn-sc-lg" id="about-cta-repair-btn">Request a Repair</a>
+      <a href="before-after.html" class="btn-sc btn-ghost-sc btn-sc-lg" id="about-cta-gallery-btn">View Our Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="sc-footer">
+  <div class="container-sc">
+    <div class="sc-footer-grid">
+      <div class="footer-brand"><a href="index.html" class="footer-brand-link" aria-label="SoleCraft home"><img src="assets/images/common/logo-light.png" alt="SoleCraft Repair Studio" class="footer-brand-logo"></a><p>Professional shoe repair and leather restoration. Trusted craftsmanship since 2009.</p><div class="footer-social"><a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a><a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a><a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a><a href="#" aria-label="Google Maps"><i class="bi bi-geo-alt"></i></a></div></div>
+      <div class="footer-col"><h5>Pages</h5><ul><li><a href="index.html">Home 1</a></li><li><a href="home2.html">Home 2</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="before-after.html">Before &amp; After</a></li><li><a href="craftsmanship.html">Craftsmanship</a></li></ul></div>
+      <div class="footer-col"><h5>Services</h5><ul><li><a href="services.html#sole">Sole Replacement</a></li><li><a href="services.html#heel">Heel Repair</a></li><li><a href="services.html#leather">Leather Polishing</a></li><li><a href="services.html#stitching">Shoe Stitching</a></li><li><a href="services.html#stretch">Stretch Fitting</a></li><li><a href="services.html#waterproof">Waterproofing</a></li></ul></div>
+      <div class="footer-col"><h5>Contact &amp; Hours</h5><div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>42 Craftsman Lane, Nungambakkam, Chennai 600 034</span></div><div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><span>+91 98765 43210</span></div><div class="footer-contact-item"><i class="bi bi-envelope-fill"></i><span>hello@solecraftrepair.in</span></div><div class="footer-hours" style="margin-top:0.75rem;"><div class="footer-hours-row"><span class="day">Mon–Fri</span><span>9:00 AM – 7:00 PM</span></div><div class="footer-hours-row"><span class="day">Saturday</span><span>10:00 AM – 5:00 PM</span></div><div class="footer-hours-row"><span class="day">Sunday</span><span>Closed</span></div></div></div>
+    </div>
+    <div class="sc-footer-bottom"><p>&copy; 2026 SoleCraft Repair Studio. All rights reserved.</p><div class="footer-legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div></div>
+  </div>
+</footer>
+<button id="scroll-top" aria-label="Back to top"><i class="bi bi-arrow-up"></i></button>
+<script src="js/main.js"></script>
+</body>
+</html>

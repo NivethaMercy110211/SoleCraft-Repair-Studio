@@ -1,0 +1,163 @@
+/* ============================================================
+   SoleCraft — rtl.css
+   RTL layout direction overrides
+   ============================================================ */
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* ── Navbar RTL ──────────────────────────────────────────── */
+[dir="rtl"] .sc-brand-icon {
+  margin-left: 0.625rem;
+  margin-right: 0;
+}
+
+[dir="rtl"] .sc-brand-text {
+  align-items: flex-end;
+}
+
+/* ── Hero RTL ────────────────────────────────────────────── */
+[dir="rtl"] .hero-overlay {
+  background: linear-gradient(
+    -120deg,
+    rgba(42,37,33,0.70) 0%,
+    rgba(42,37,33,0.30) 60%,
+    transparent 100%
+  );
+}
+
+[dir="rtl"] .sc-page-hero .page-hero-content {
+  text-align: center;
+}
+
+/* ── Section Header RTL ──────────────────────────────────── */
+[dir="rtl"] .section-header .sc-divider {
+  margin-right: 0;
+  margin-left: auto;
+}
+
+[dir="rtl"] .section-header.center .sc-divider {
+  margin-inline: auto;
+}
+
+/* ── Nav RTL ─────────────────────────────────────────────── */
+[dir="rtl"] .sc-nav-links .nav-link::after {
+  left: 0.75rem;
+  right: 0.75rem;
+}
+
+/* ── Cards RTL ───────────────────────────────────────────── */
+[dir="rtl"] .service-category-header {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .add-service-card {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+[dir="rtl"] .footer-contact-item {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+/* ── Footer RTL ──────────────────────────────────────────── */
+[dir="rtl"] .footer-col ul li a {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+[dir="rtl"] .footer-col ul li a:hover {
+  padding-left: 0;
+  padding-right: 6px;
+}
+
+/* ── Auth RTL ────────────────────────────────────────────── */
+[dir="rtl"] .auth-page {
+  direction: rtl;
+}
+
+[dir="rtl"] .auth-form-panel {
+  text-align: right;
+}
+
+[dir="rtl"] .auth-brand {
+  text-align: right;
+}
+
+[dir="rtl"] .auth-controls {
+  left: 1.5rem;
+  right: auto;
+}
+
+[dir="rtl"] .password-toggle {
+  right: auto;
+  left: 1rem;
+}
+
+[dir="rtl"] .password-field .sc-form-control {
+  padding-right: 1rem;
+  padding-left: 3rem;
+}
+
+[dir="rtl"] .auth-options-row,
+[dir="rtl"] .remember-option {
+  flex-direction: row-reverse;
+}
+
+/* ── Pricing RTL ─────────────────────────────────────────── */
+[dir="rtl"] .pricing-table th,
+[dir="rtl"] .pricing-table td {
+  text-align: right;
+}
+
+[dir="rtl"] .pricing-table th:last-child,
+[dir="rtl"] .pricing-table td:last-child {
+  text-align: center;
+}
+
+/* ── Process Steps RTL ───────────────────────────────────── */
+[dir="rtl"] .process-step-connector {
+  right: auto;
+  left: 0;
+  transform: scaleX(-1);
+}
+
+/* ── Form RTL ────────────────────────────────────────────── */
+[dir="rtl"] .sc-form-label {
+  text-align: right;
+}
+
+[dir="rtl"] select.sc-form-control {
+  background-position: left 1rem center;
+  padding-right: 1rem;
+  padding-left: 2.5rem;
+}
+
+/* ── Testimonial RTL ─────────────────────────────────────── */
+[dir="rtl"] .testimonial-card {
+  text-align: right;
+}
+
+/* ── Stat Block RTL ──────────────────────────────────────── */
+[dir="rtl"] .stat-block {
+  text-align: center;
+}
+
+/* ── Gallery Filter RTL ──────────────────────────────────── */
+[dir="rtl"] .gallery-filters {
+  flex-direction: row-reverse;
+}
+
+/* ── Before/After Labels RTL ─────────────────────────────── */
+[dir="rtl"] .ba-label.before {
+  left: auto;
+  right: 12px;
+}
+
+[dir="rtl"] .ba-label.after {
+  right: auto;
+  left: 12px;
+}

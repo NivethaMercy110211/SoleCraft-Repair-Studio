@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SoleCraft Repair Studio — Craftsmanship That Gives Shoes a Second Life</title>
+  <meta name="description" content="SoleCraft Repair Studio offers professional shoe repair, sole replacement, heel repair, leather restoration, stitching and more. Trusted local cobbler service with quick turnaround.">
+  <link rel="canonical" href="index.html">
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- SoleCraft CSS -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/buttons.css">
+  <link rel="stylesheet" href="css/services.css">
+  <link rel="stylesheet" href="css/gallery.css">
+  <link rel="stylesheet" href="css/forms.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/dark-theme.css">
+  <link rel="stylesheet" href="css/rtl.css">
+  <link rel="stylesheet" href="css/desktop.css">
+  <link rel="stylesheet" href="css/tablet.css">
+  <link rel="stylesheet" href="css/mobile.css">
+  <link rel="stylesheet" href="css/responsive-fixes.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <style>
+    /* ── Page-specific styles ── */
+    .why-repair-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-5);
+      align-items: center;
+    }
+    .why-repair-img {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      height: 480px;
+    }
+    .why-repair-img img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .why-reasons {
+      display: flex;
+      flex-direction: column;
+      gap: var(--sp-3);
+    }
+    .why-reason-item {
+      display: flex;
+      gap: var(--sp-3);
+      align-items: flex-start;
+    }
+    .why-reason-icon {
+      width: 44px; height: 44px;
+      background: rgba(107,74,50,0.10);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--clr-primary); font-size: 1.125rem; flex-shrink: 0;
+    }
+    .craft-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-4);
+    }
+    .craft-detail-card {
+      background: var(--bg-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .craft-detail-card .img-wrap {
+      height: 180px; overflow: hidden;
+    }
+    .craft-detail-card .img-wrap img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform var(--transition-slow);
+    }
+    .craft-detail-card:hover .img-wrap img { transform: scale(1.06); }
+    .craft-detail-card .card-body { padding: var(--sp-3); }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-4);
+    }
+    .turnaround-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-4);
+    }
+    .turnaround-card {
+      background: var(--bg-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-4);
+      text-align: center;
+    }
+    .turnaround-card .t-icon {
+      font-size: 2rem; color: var(--clr-primary); margin-bottom: var(--sp-2);
+    }
+    .turnaround-card h4 { font-size: var(--fs-xl); color: var(--clr-heading); margin-bottom: 0.25rem; }
+    .turnaround-card > .sc-badge { align-self: center; text-align: center; }
+    .process-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-4);
+    }
+    .process-step {
+      background: var(--bg-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      padding: var(--sp-4);
+      position: relative;
+    }
+    .process-step h5 { font-family: var(--font-heading); font-size: var(--fs-xl); color: var(--clr-heading); margin: var(--sp-2) 0 var(--sp-1); }
+    .materials-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: var(--sp-3);
+    }
+    .material-item {
+      text-align: center;
+      padding: var(--sp-3);
+      background: var(--bg-card);
+      border: 1px solid var(--clr-border);
+      border-radius: var(--radius-lg);
+      transition: all var(--transition-fast);
+    }
+    .material-item:hover {
+      border-color: var(--clr-primary);
+      background: var(--clr-beige);
+    }
+    .material-item i { font-size: 1.75rem; color: var(--clr-primary); margin-bottom: 0.5rem; }
+    .material-item span { font-size: var(--fs-xs); font-weight: 700; color: var(--clr-heading); letter-spacing: 0.04em; }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--sp-3);
+    }
+    @media (max-width: 1024px) {
+      .why-repair-grid { grid-template-columns: 1fr; }
+      .why-repair-img { height: 300px; }
+      .craft-detail-grid, .turnaround-grid, .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid, .process-steps-grid, .materials-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 767px) {
+      .craft-detail-grid, .turnaround-grid, .reviews-grid,
+      .stats-grid, .process-steps-grid { grid-template-columns: 1fr; }
+      .materials-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════════════════════ -->
+<header>
+  <nav class="sc-navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar-container">
+      <!-- Brand -->
+      <a href="index.html" class="sc-brand" aria-label="SoleCraft Repair Studio Home">
+        <img src="assets/images/common/logo.png" alt="SoleCraft Repair Studio" class="sc-brand-logo">
+      </a>
+
+      <!-- Desktop Nav -->
+      <ul class="sc-nav-links" role="list">
+        <li><a href="index.html"        class="nav-link active">Home 1</a></li>
+        <li><a href="home2.html"        class="nav-link">Home 2</a></li>
+        <li><a href="about.html"        class="nav-link">About</a></li>
+        <li><a href="services.html"     class="nav-link">Services</a></li>
+        <li><a href="pricing.html"      class="nav-link">Pricing</a></li>
+        <li><a href="before-after.html" class="nav-link">Before &amp; After</a></li>
+        <li><a href="craftsmanship.html" class="nav-link">Craftsmanship</a></li>
+        <li><a href="contact.html"      class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Controls -->
+      <div class="sc-nav-controls">
+        <a href="login.html" class="btn-login" id="nav-login-btn">Login</a>
+        <button class="sc-icon-btn sc-theme-toggle" id="theme-toggle-btn" aria-label="Toggle theme" title="Toggle dark/light mode">
+          <i class="bi bi-moon sc-theme-icon"></i>
+        </button>
+        <button class="sc-icon-btn sc-rtl-toggle" id="rtl-toggle-btn" aria-label="Toggle RTL/LTR" title="Toggle text direction">
+          <span class="sc-rtl-label" style="font-size:0.65rem;font-weight:700;">RTL</span>
+        </button>
+        <button class="sc-hamburger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="sc-mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <ul class="mobile-nav-links">
+      <li><a href="index.html"         class="active">Home 1</a></li>
+      <li><a href="home2.html">Home 2</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="before-after.html">Before &amp; After</a></li>
+      <li><a href="craftsmanship.html">Craftsmanship</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="mobile-controls">
+      <a href="login.html" class="btn-sc btn-secondary-sc btn-sc-sm">Login</a>
+      <button class="sc-icon-btn sc-theme-toggle" aria-label="Toggle theme">
+        <i class="bi bi-moon sc-theme-icon"></i>
+      </button>
+      <button class="sc-icon-btn sc-rtl-toggle" aria-label="Toggle direction">
+        <span class="sc-rtl-label" style="font-size:0.65rem;font-weight:700;">RTL</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════════
+     HERO — Home 1
+═══════════════════════════════════════════════════════════ -->
+<section class="sc-hero home1-hero" id="hero" aria-label="Hero section">
+  <div class="sc-hero-bg" style="background-image: url('assets/images/hero/home1-banner.png');" role="img" aria-label="Master cobbler repairing a leather shoe at a professional workbench"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="container-sc">
+    <div class="sc-hero-content">
+      <p class="eyebrow fade-up">Professional Shoe Repair · Est. 2009</p>
+      <h1 class="fade-up stagger-1">Craftsmanship That Gives Shoes a Second Life.</h1>
+      <p class="lead fade-up stagger-2">From worn soles to scuffed leather, our skilled cobblers restore your footwear to its finest condition — with honest timelines, quality materials and a genuine care for every pair.</p>
+      <div class="hero-ctas fade-up stagger-3">
+        <a href="services.html" class="btn-sc btn-primary-sc btn-sc-lg" id="hero-explore-services-btn">
+          <i class="bi bi-wrench" aria-hidden="true"></i> Explore Repair Services
+        </a>
+        <a href="contact.html#enquiry" class="btn-sc btn-ghost-sc btn-sc-lg" id="hero-request-repair-btn">
+          Request a Repair
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 1 — Most Requested Repairs
+═══════════════════════════════════════════════════════════ -->
+<section class="section-pad bg-cream" id="most-requested" aria-labelledby="most-requested-heading">
+  <div class="container-sc">
+    <div class="section-header center fade-up">
+      <p class="eyebrow">What We Do Best</p>
+      <div class="sc-divider"></div>
+      <h2 id="most-requested-heading">Our Most Requested Repairs</h2>
+      <p>Everyday wear takes its toll. These are the repairs our customers bring to us most — handled with care and precision.</p>
+    </div>
+    <div class="service-grid fade-up stagger-1">
+      <div class="service-card">
+        <div class="service-card-media"><img src="assets/images/services/sole-replacement.jpg" alt="Cobbler replacing a durable rubber sole on boot" loading="lazy"></div>
+        <div class="service-icon-wrap"><i class="bi bi-layers" aria-hidden="true"></i></div>
+        <span class="sc-badge sc-badge-dark">MOST REQUESTED</span>
+        <h3 class="service-card-title">Sole Replacement</h3>
+        <p class="service-card-desc">Full and partial sole replacement using rubber, leather or synthetic materials. We match the original construction where possible.</p>
+        <div class="service-card-meta">
+          <span class="service-meta-item"><i class="bi bi-clock"></i> 1–3 business days</span>
+          <span class="service-meta-item"><i class="bi bi-shoe"></i> All footwear types</span>
+        </div>
+        <div class="service-card-price">Starting from ₹399</div>
+        <div class="service-card-cta"><a href="contact.html#enquiry" class="btn-sc btn-secondary-sc btn-sc-sm" id="sole-enquire-btn">Enquire</a></div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-media"><img src="assets/images/services/heel-repair.jpg" alt="Rebuilding a stacked leather heel with brass nails" loading="lazy"></div>
+        <div class="service-icon-wrap"><i class="bi bi-triangle" aria-hidden="true"></i></div>
+        <span class="sc-badge sc-badge-primary">QUICK REPAIR</span>
+        <h3 class="service-card-title">Heel Repair</h3>
+        <p class="service-card-desc">Heel tip replacement, heel block rebuilding and reinforcement. We restore balance, height and stability to worn-down heels.</p>
+        <div class="service-card-meta">
+          <span class="service-meta-item"><i class="bi bi-clock"></i> Same-day eligible</span>
+          <span class="service-meta-item"><i class="bi bi-shoe"></i> Formal &amp; casual</span>
+        </div>
+        <div class="service-card-price">Starting from ₹199</div>
+        <div class="service-card-cta"><a href="contact.html#enquiry" class="btn-sc btn-secondary-sc btn-sc-sm" id="heel-enquire-btn">Enquire</a></div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-media"><img src="assets/images/services/leather-care.jpg" alt="Artisan conditioning and polishing fine leather shoe" loading="lazy"></div>
+        <div class="service-icon-wrap"><i class="bi bi-droplet-half" aria-hidden="true"></i></div>
+        <span class="sc-badge sc-badge-accent">LEATHER</span>
+        <h3 class="service-card-title">Leather Restoration</h3>
+        <p class="service-card-desc">Deep cleaning, conditioning, colour restoration and surface polishing to bring faded or scuffed leather back to life with a carefully matched finish.</p>
+        <div class="service-card-meta">
+          <span class="service-meta-item"><i class="bi bi-clock"></i> 1–2 business days</span>
+          <span class="service-meta-item"><i class="bi bi-shoe"></i> Leather footwear</span>
+        </div>
+        <div class="service-card-price">Starting from ₹249</div>
+        <div class="service-card-cta"><a href="contact.html#enquiry" class="btn-sc btn-secondary-sc btn-sc-sm" id="leather-enquire-btn">Enquire</a></div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-media"><img src="assets/images/services/stitching-repair.jpg" alt="Hand stitching shoe upper welt seam with waxed thread" loading="lazy"></div>
+        <div class="service-icon-wrap"><i class="bi bi-scissors" aria-hidden="true"></i></div>
+        <span class="sc-badge sc-badge-primary">STRUCTURAL</span>
+        <h3 class="service-card-title">Shoe Stitching</h3>
+        <p class="service-card-desc">Torn seam repair, upper stitching and side seam reinforcement. We use the appropriate thread weight and stitch pattern for the original construction.</p>
+        <div class="service-card-meta">
+          <span class="service-meta-item"><i class="bi bi-clock"></i> 1–2 business days</span>
+          <span class="service-meta-item"><i class="bi bi-shoe"></i> All footwear types</span>
+        </div>
+        <div class="service-card-price">Starting from ₹149</div>
+        <div class="service-card-cta"><a href="contact.html#enquiry" class="btn-sc btn-secondary-sc btn-sc-sm" id="stitch-enquire-btn">Enquire</a></div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-media"><img src="assets/images/services/waterproofing.jpg" alt="Protective waterproofing conditioning treatment applied to boot" loading="lazy"></div>
+        <div class="service-icon-wrap"><i class="bi bi-shield-check" aria-hidden="true"></i></div>
+        <span class="sc-badge sc-badge-accent">PROTECTION</span>
+        <h3 class="service-card-title">Waterproofing</h3>
+        <p class="service-card-desc">Surface preparation and protective water-repellent treatment for everyday wear. Results vary by material — we advise honestly on what to expect.</p>
+        <div class="service-card-meta">
+          <span class="service-meta-item"><i class="bi bi-clock"></i> Same-day eligible</span>
+          <span class="service-meta-item"><i class="bi bi-shoe"></i> Leather &amp; suede</span>
+        </div>
+        <div class="service-card-price">Starting from ₹299</div>
+        <div class="service-card-cta"><a href="contact.html#enquiry" class="btn-sc btn-secondary-sc btn-sc-sm" id="waterproof-enquire-btn">Enquire</a></div>
+      </div>
+      <div class="service-card">
+        <div class="service-card-media"><img src="assets/images/services/stretch-fitting.jpg" alt="Cast iron mechanical shoe stretcher apparatus" loading="lazy"></div>
+        <div class="service-icon-wrap"><i class="bi bi-arrows-angle-expand" aria-hidden="true"></i></div>
+        <span class="sc-badge sc-badge-primary">FIT</span>
+        <h3 class="service-card-title">Stretch Fitting</h3>
+        <p class="service-card-desc">Width stretching and targeted pressure-point adjustments for tight footwear. We use controlled stretching — results depend on leather type and construction.</p>
+        <div class="service-card-meta">
+          <span class="service-meta-item"><i class="bi bi-clock"></i> 1–2 business days</span>
+          <span class="service-meta-item"><i class="bi bi-shoe"></i> Leather shoes</span>
+        </div>
+        <div class="service-card-price">Starting from ₹249</div>
+        <div class="service-card-cta"><a href="contact.html#enquiry" class="btn-sc btn-secondary-sc btn-sc-sm" id="stretch-enquire-btn">Enquire</a></div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top: var(--sp-5);">
+      <a href="services.html" class="btn-sc btn-primary-sc" id="view-all-services-btn">View All Services <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 2 — Why Repair Instead of Replace
+═══════════════════════════════════════════════════════════ -->
+<section class="section-pad bg-white" id="why-repair" aria-labelledby="why-repair-heading">
+  <div class="container-sc">
+    <div class="why-repair-grid">
+      <div class="why-repair-img fade-up">
+        <img src="assets/images/pages/why-repair.jpg" alt="Pair of heritage leather work boots with durable resoled Vibram soles and rich patina" loading="lazy">
+      </div>
+      <div class="fade-up stagger-2">
+        <p class="eyebrow">The Smarter Choice</p>
+        <div class="sc-divider"></div>
+        <h2 id="why-repair-heading">Why Repair Instead of Replace?</h2>
+        <p style="margin-bottom: var(--sp-4);">Quality footwear is built to last — with the right care and repair, a well-made pair of shoes can outlast several cheaper replacements. Here is why bringing them to us makes sense.</p>
+        <div class="why-reasons">
+          <div class="why-reason-item">
+            <div class="why-reason-icon"><i class="bi bi-currency-rupee" aria-hidden="true"></i></div>
+            <div>
+              <h5 style="font-family:var(--font-heading);font-size:var(--fs-xl);color:var(--clr-heading);margin-bottom:0.25rem;">Significant Cost Saving</h5>
+              <p style="margin-bottom:0;">A quality sole replacement typically costs a fraction of a new pair. Protect your investment rather than replace it.</p>
+            </div>
+          </div>
+          <div class="why-reason-item">
+            <div class="why-reason-icon"><i class="bi bi-recycle" aria-hidden="true"></i></div>
+            <div>
+              <h5 style="font-family:var(--font-heading);font-size:var(--fs-xl);color:var(--clr-heading);margin-bottom:0.25rem;">Environmental Responsibility</h5>
+              <p style="margin-bottom:0;">Repairing extends the life of what already exists. Fewer shoes in landfill, fewer new resources consumed.</p>
+            </div>
+          </div>
+          <div class="why-reason-item">
+            <div class="why-reason-icon"><i class="bi bi-person-check" aria-hidden="true"></i></div>
+            <div>
+              <h5 style="font-family:var(--font-heading);font-size:var(--fs-xl);color:var(--clr-heading);margin-bottom:0.25rem;">Familiar Fit and Comfort</h5>
+              <p style="margin-bottom:0;">Broken-in shoes conform to your foot. A repaired pair retains that comfort — a new pair requires time to break in again.</p>
+            </div>
+          </div>
+          <div class="why-reason-item">
+            <div class="why-reason-icon"><i class="bi bi-star" aria-hidden="true"></i></div>
+            <div>
+              <h5 style="font-family:var(--font-heading);font-size:var(--fs-xl);color:var(--clr-heading);margin-bottom:0.25rem;">Preserve Quality You Paid For</h5>
+              <p style="margin-bottom:0;">Premium leather, good construction and original craftsmanship deserve to be maintained — not discarded because of a worn heel or loose sole.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 3 — Stats (Quick Numbers)
+═══════════════════════════════════════════════════════════ -->
+<section class="section-pad-sm bg-primary" id="stats" aria-labelledby="stats-heading">
+  <div class="container-sc">
+    <div class="stats-grid">
+      <div class="stat-block fade-up">
+        <div class="stat-number" style="color:#F5EFE6;">5,000+</div>
+        <div class="stat-label" style="color:rgba(245,239,230,0.70);">Shoes Repaired</div>
+      </div>
+      <div class="stat-block fade-up stagger-1">
+        <div class="stat-number" style="color:#F5EFE6;">15+</div>
+        <div class="stat-label" style="color:rgba(245,239,230,0.70);">Years Experience</div>
+      </div>
+      <div class="stat-block fade-up stagger-2">
+        <div class="stat-number" style="color:#F5EFE6;">4.9★</div>
+        <div class="stat-label" style="color:rgba(245,239,230,0.70);">Customer Rating</div>
+      </div>
+      <div class="stat-block fade-up stagger-3">
+        <div class="stat-number" style="color:#F5EFE6;">98%</div>
+        <div class="stat-label" style="color:rgba(245,239,230,0.70);">Satisfaction Rate</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 4 — Craftsmanship in Every Detail
+═══════════════════════════════════════════════════════════ -->
+<section class="section-pad bg-cream" id="craftsmanship-detail" aria-labelledby="craft-detail-heading">
+  <div class="container-sc">
+    <div class="section-header center fade-up">
+      <p class="eyebrow">Our Standard</p>
+      <div class="sc-divider"></div>
+      <h2 id="craft-detail-heading">Craftsmanship in Every Detail</h2>
+      <p>Every repair we perform reflects our commitment to quality — from the thread we choose to the edge finish we apply.</p>
+    </div>
+    <div class="craft-detail-grid">
+      <div class="craft-detail-card fade-up">
+        <div class="img-wrap"><img src="assets/images/craftsmanship/hand-stitching-craft.jpg" alt="Artisan cobbler hand-stitching a shoe welt seam" loading="lazy"></div>
+        <div class="card-body">
+          <span class="sc-badge sc-badge-primary" style="margin-bottom:0.5rem;">Hand Stitching</span>
+          <h4 style="font-family:var(--font-heading);font-size:var(--fs-xl);color:var(--clr-heading);margin:0.5rem 0 0.25rem;">Thread &amp; Needle Work</h4>
+          <p style="font-size:var(--fs-sm);margin:0;">We match thread weight and stitch pattern to the original construction. Seams are reinforced for lasting strength.</p>
+        </div>
+      </div>
+      <div class="craft-detail-card fade-up stagger-1">
+        <div class="img-wrap"><img src="assets/images/craftsmanship/materials-display.jpg" alt="Premium leather rolls, Vibram soles and materials on workshop shelves" loading="lazy"></div>
+        <div class="card-body">
+          <span class="sc-badge sc-badge-accent" style="margin-bottom:0.5rem;">Material Matching</span>
+          <h4 style="font-family:var(--font-heading);font-size:var(--fs-xl);color:var(--clr-heading);margin:0.5rem 0 0.25rem;">Right Materials, Right Repair</h4>
+          <p style="font-size:var(--fs-sm);margin:0;">We select replacement soles, heels and materials that suit both the shoe's original construction and its intended use.</p>
+        </div>
+      </div>
+      <div class="craft-detail-card fade-up stagger-2">
+        <div class="img-wrap"><img src="assets/images/craftsmanship/edge-finishing.jpg" alt="Cobbler finishing and beveling sole edge with heated iron" loading="lazy"></div>
+        <div class="card-body">
+          <span class="sc-badge sc-badge-dark" style="margin-bottom:0.5rem;">Edge Finishing</span>
+          <h4 style="font-family:var(--font-heading);font-size:var(--fs-xl);color:var(--clr-heading);margin:0.5rem 0 0.25rem;">Clean Finished Edges</h4>
+          <p style="font-size:var(--fs-sm);margin:0;">Sole edges are bevelled, burnished and dyed for a professional finish that holds up to regular wear and weather.</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top: var(--sp-5);">
+      <a href="craftsmanship.html" class="btn-sc btn-secondary-sc" id="craftsmanship-detail-btn">Learn About Our Process <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 5 — Quick Turnaround
+═══════════════════════════════════════════════════════════ -->
+<section class="section-pad bg-white" id="turnaround" aria-labelledby="turnaround-heading">
+  <div class="container-sc">
+    <div class="section-header center fade-up">
+      <p class="eyebrow">Repair Timeline</p>
+      <div class="sc-divider"></div>
+      <h2 id="turnaround-heading">Honest Turnaround Times</h2>
+      <p>We give realistic timelines — not promises we cannot keep. Our turnaround depends on the repair complexity and current workshop volume.</p>
+    </div>
+    <div class="turnaround-grid">
+      <div class="turnaround-card fade-up">
+        <div class="t-icon"><i class="bi bi-lightning-charge" aria-hidden="true"></i></div>
+        <h4>Same Day</h4>
+        <p class="sc-badge sc-badge-primary" style="margin-bottom:var(--sp-2);">Selected Minor Repairs</p>
+        <p style="font-size:var(--fs-sm);color:var(--clr-body);">Heel tip replacement, minor stitching and shoe cleaning may be completed same-day when workshop volume allows. Please enquire before dropping off.</p>
+      </div>
+      <div class="turnaround-card fade-up stagger-1">
+        <div class="t-icon"><i class="bi bi-calendar2-check" aria-hidden="true"></i></div>
+        <h4>1–3 Business Days</h4>
+        <p class="sc-badge sc-badge-accent" style="margin-bottom:var(--sp-2);">Standard Repairs</p>
+        <p style="font-size:var(--fs-sm);color:var(--clr-body);">Sole replacement, heel rebuilding, leather conditioning, waterproofing and most stitching repairs are typically completed within 1–3 business days.</p>
+      </div>
+      <div class="turnaround-card fade-up stagger-2">
+        <div class="t-icon"><i class="bi bi-calendar3" aria-hidden="true"></i></div>
+        <h4>4–7 Business Days</h4>
+        <p class="sc-badge sc-badge-dark" style="margin-bottom:var(--sp-2);">Complex Restoration</p>
+        <p style="font-size:var(--fs-sm);color:var(--clr-body);">Full leather restoration, structural repairs, colour re-dyeing and multi-repair combinations may require additional time for proper curing and finishing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 6 — Before & After Preview
+═══════════════════════════════════════════════════════════ -->
+<section class="section-pad bg-beige" id="ba-preview" aria-labelledby="ba-preview-heading">
+  <div class="container-sc">
+    <div class="section-header center fade-up">
+      <p class="eyebrow">Results Speak Clearly</p>
+      <div class="sc-divider"></div>
+      <h2 id="ba-preview-heading">Before &amp; After Preview</h2>
+      <p>Drag the slider to compare. What arrives worn leaves restored.</p>
+    </div>
+    <div class="gallery-grid" style="grid-template-columns: repeat(3,1fr);">
+      <!-- BA Card 1 -->
+      <div class="gallery-card fade-up">
+        <div class="ba-container" role="img" aria-label="Before and after comparison of boot sole replacement">
+          <div class="ba-after"><img src="assets/images/gallery/sole-commando-after.jpg" alt="Boot resoled with durable new Vibram rubber sole" loading="lazy"></div>
+          <div class="ba-before"><img src="assets/images/gallery/sole-before.jpg" alt="Old worn-through boot sole with large hole" loading="lazy"></div>
+          <div class="ba-handle" aria-hidden="true"><div class="ba-handle-knob"><i class="bi bi-chevron-expand" style="transform:rotate(90deg)"></i></div></div>
+          <span class="ba-label before" aria-hidden="true">Before</span>
+          <span class="ba-label after" aria-hidden="true">After</span>
+        </div>
+        <div class="gallery-card-info">
+          <div class="gallery-card-label">Full Sole Replacement</div>
+          <div class="gallery-card-meta">Vibram Resole · Midsole Rebuilt</div>
+          <div class="gallery-card-desc">Worn-through leather and rubber sole completely rebuilt and fitted with heavy-duty Vibram lugged tread.</div>
+        </div>
+      </div>
+      <!-- BA Card 2 -->
+      <div class="gallery-card fade-up stagger-1">
+        <div class="ba-container" role="img" aria-label="Before and after of Oxford shoe leather conditioning">
+          <div class="ba-after"><img src="assets/images/gallery/leather-mirror-after.jpg" alt="Oxford shoes after deep nourishment and mirror gloss glaze" loading="lazy"></div>
+          <div class="ba-before"><img src="assets/images/gallery/leather-scuffed-before.jpg" alt="Scuffed and faded leather shoes before treatment" loading="lazy"></div>
+          <div class="ba-handle" aria-hidden="true"><div class="ba-handle-knob"><i class="bi bi-chevron-expand" style="transform:rotate(90deg)"></i></div></div>
+          <span class="ba-label before" aria-hidden="true">Before</span>
+          <span class="ba-label after" aria-hidden="true">After</span>
+        </div>
+        <div class="gallery-card-info">
+          <div class="gallery-card-label">Leather Restoration &amp; Polish</div>
+          <div class="gallery-card-meta">Deep Conditioning · Mirror Polish</div>
+          <div class="gallery-card-desc">Full cleaning, beeswax conditioning, colour restoration and mirror polish returning showroom luster.</div>
+        </div>
+      </div>
+      <!-- BA Card 3 -->
+      <div class="gallery-card fade-up stagger-2">
+        <div class="ba-container" role="img" aria-label="Before and after of stacked heel rebuilding">
+          <div class="ba-after"><img src="assets/images/gallery/heel-rebuilt-after.jpg" alt="Rebuilt stacked leather heel block with brass nails" loading="lazy"></div>
+          <div class="ba-before"><img src="assets/images/gallery/heel-worn-before.jpg" alt="Worn down slanted heel block before repair" loading="lazy"></div>
+          <div class="ba-handle" aria-hidden="true"><div class="ba-handle-knob"><i class="bi bi-chevron-expand" style="transform:rotate(90deg)"></i></div></div>
+          <span class="ba-label before" aria-hidden="true">Before</span>
+          <span class="ba-label after" aria-hidden="true">After</span>
+        </div>
+        <div class="gallery-card-info">
+          <div class="gallery-card-label">Stacked Heel Rebuilding</div>
+          <div class="gallery-card-meta">Leather Heel Block · Brass Nailed</div>
+          <div class="gallery-card-desc">Heavily worn heel block reconstructed with stacked leather lifts and secured with traditional brass nails.</div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top: var(--sp-5);">
+      <a href="before-after.html" class="btn-sc btn-primary-sc" id="view-gallery-btn">View Full Gallery <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 7 — How the Repair Process Works
+═══════════════════════════════════════════════════════════ -->
+<section class="section-pad bg-white" id="process" aria-labelledby="process-heading">
+  <div class="container-sc">
+    <div class="section-header center fade-up">
+      <p class="eyebrow">How It Works</p>
+      <div class="sc-divider"></div>
+      <h2 id="process-heading">How the Repair Process Works</h2>
+      <p>From drop-off to collection — a clear, honest journey for every pair.</p>
+    </div>
+    <div class="process-steps-grid">
+      <div class="process-step fade-up">
+        <div class="step-number">1</div>
+        <h5>Assessment</h5>
+        <p style="font-size:var(--fs-sm);">We inspect the wear pattern, sole condition, stitching integrity, heel and leather. No repair begins without a clear picture of what is needed.</p>
+      </div>
+      <div class="process-step fade-up stagger-1">
+        <div class="step-number">2</div>
+        <h5>Repair Plan</h5>
+        <p style="font-size:var(--fs-sm);">We identify the correct repair method, select materials suited to the shoe and provide a clear estimate and timeline before any work begins.</p>
+      </div>
+      <div class="process-step fade-up stagger-2">
+        <div class="step-number">3</div>
+        <h5>Preparation</h5>
+        <p style="font-size:var(--fs-sm);">Damaged components are carefully removed and surfaces are prepared — cleaning, roughing and priming as appropriate for the repair.</p>
+      </div>
+      <div class="process-step fade-up stagger-3">
+        <div class="step-number">4</div>
+        <h5>Repair &amp; Finish</h5>
+        <p style="font-size:var(--fs-sm);">Sole, heel, stitching or structural work is performed. Every repair is followed by conditioning, edge finishing, polishing and a full inspection.</p>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top: var(--sp-5);">
+      <a href="craftsmanship.html" class="btn-sc btn-secondary-sc" id="full-process-btn">Full Process Breakdown <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 8 — Materials & Finishing
+═══════════════════════════════════════════════════════════ -->
+<section class="section-pad bg-cream" id="materials" aria-labelledby="materials-heading">
+  <div class="container-sc">
+    <div class="section-header center fade-up">
+      <p class="eyebrow">What We Work With</p>
+      <div class="sc-divider"></div>
+      <h2 id="materials-heading">Materials &amp; Finishing</h2>
+      <p>We stock a range of professional-grade repair materials. Honest material matching is central to every repair we perform.</p>
+    </div>
+    <div class="materials-grid">
+      <div class="material-item fade-up"><i class="bi bi-circle-square"></i><span>Full-grain Leather</span></div>
+      <div class="material-item fade-up stagger-1"><i class="bi bi-water"></i><span>Suede &amp; Nubuck</span></div>
+      <div class="material-item fade-up stagger-2"><i class="bi bi-gear"></i><span>Rubber Soles</span></div>
+      <div class="material-item fade-up stagger-3"><i class="bi bi-layers"></i><span>Leather Soles</span></div>
+      <div class="material-item fade-up stagger-4"><i class="bi bi-scissors"></i><span>Waxed Thread</span></div>
+      <div class="material-item fade-up stagger-5"><i class="bi bi-droplet"></i><span>Leather Cream</span></div>
+      <div class="material-item fade-up"><i class="bi bi-brush"></i><span>Edge Dressing</span></div>
+      <div class="material-item fade-up stagger-1"><i class="bi bi-shield"></i><span>Waterproof Spray</span></div>
+      <div class="material-item fade-up stagger-2"><i class="bi bi-palette"></i><span>Leather Dye</span></div>
+      <div class="material-item fade-up stagger-3"><i class="bi bi-cpu"></i><span>Heel Tips</span></div>
+      <div class="material-item fade-up stagger-4"><i class="bi bi-link-45deg"></i><span>Eyelets &amp; Hardware</span></div>
+      <div class="material-item fade-up stagger-5"><i class="bi bi-bar-chart"></i><span>Insoles</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 9 — Customer Reviews
+═══════════════════════════════════════════════════════════ -->
+<section class="section-pad bg-white" id="reviews" aria-labelledby="reviews-heading">
+  <div class="container-sc">
+    <div class="section-header center fade-up">
+      <p class="eyebrow">What Customers Say</p>
+      <div class="sc-divider"></div>
+      <h2 id="reviews-heading">Customer Reviews</h2>
+    </div>
+    <div class="reviews-grid">
+      <div class="testimonial-card fade-up">
+        <div class="star-rating" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="t-text">"Brought in a pair of dress shoes I had written off. They came back looking extraordinary. The sole was replaced perfectly, and the edge finishing was immaculate."</p>
+        <div class="t-profile">
+          <div class="t-avatar"><img src="assets/images/pages/customer-1.png" alt="Rahul M." loading="lazy"></div>
+          <div><div class="t-name">Rahul M.</div><div class="t-role">Customer · Chennai</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up stagger-1">
+        <div class="star-rating" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="t-text">"Honestly one of the most professional repair shops I have visited. Clear pricing, realistic timeline and the result exceeded expectations. My leather boots look like new."</p>
+        <div class="t-profile">
+          <div class="t-avatar"><img src="assets/images/pages/customer-2.png" alt="Priya S." loading="lazy"></div>
+          <div><div class="t-name">Priya S.</div><div class="t-role">Customer · Bangalore</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card fade-up stagger-2">
+        <div class="star-rating" aria-label="5 out of 5 stars">★★★★★</div>
+        <p class="t-text">"My favourite pair of Chelsea boots had a snapped zipper. They not only fixed the zipper but also cleaned and conditioned the leather without being asked. Brilliant service."</p>
+        <div class="t-profile">
+          <div class="t-avatar"><img src="assets/images/pages/customer-3.png" alt="Arjun K." loading="lazy"></div>
+          <div><div class="t-name">Arjun K.</div><div class="t-role">Customer · Mumbai</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     SECTION 10 — Final CTA
+═══════════════════════════════════════════════════════════ -->
+<section class="cta-section section-pad" id="final-cta" style="background-image:url('assets/images/cta/home1-cta.png');" aria-labelledby="cta-heading">
+  <div class="cta-overlay" aria-hidden="true"></div>
+  <div class="container-sc cta-content">
+    <p class="eyebrow" style="color:var(--clr-accent);">Ready to Restore?</p>
+    <h2 id="cta-heading" style="color:var(--clr-white);margin-bottom:var(--sp-2);">Your shoes deserve better than the bin.</h2>
+    <p>Drop off your footwear or send us an enquiry. We will assess the damage, explain what is possible and give you an honest estimate — no obligation.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--sp-2);justify-content:center;margin-top:var(--sp-4);">
+      <a href="contact.html#enquiry" class="btn-sc btn-primary-sc btn-sc-lg" id="cta-request-btn">Request a Repair</a>
+      <a href="pricing.html" class="btn-sc btn-ghost-sc btn-sc-lg" id="cta-pricing-btn">View Pricing</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════════ -->
+<footer class="sc-footer" role="contentinfo">
+  <div class="container-sc">
+    <div class="sc-footer-grid">
+      <!-- Brand -->
+      <div class="footer-brand">
+        <a href="index.html" class="footer-brand-link" aria-label="SoleCraft home">
+          <img src="assets/images/common/logo-light.png" alt="SoleCraft Repair Studio" class="footer-brand-logo">
+        </a>
+        <p>Professional shoe repair and leather restoration in the heart of the city. Trusted craftsmanship since 2009.</p>
+        <div class="footer-social" aria-label="Social media links">
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          <a href="#" aria-label="Google Maps"><i class="bi bi-geo-alt"></i></a>
+        </div>
+      </div>
+
+      <!-- Pages -->
+      <div class="footer-col">
+        <h5>Pages</h5>
+        <ul>
+          <li><a href="index.html">Home 1</a></li>
+          <li><a href="home2.html">Home 2</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="pricing.html">Pricing</a></li>
+          <li><a href="before-after.html">Before &amp; After</a></li>
+          <li><a href="craftsmanship.html">Craftsmanship</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="services.html#sole">Sole Replacement</a></li>
+          <li><a href="services.html#heel">Heel Repair</a></li>
+          <li><a href="services.html#leather">Leather Polishing</a></li>
+          <li><a href="services.html#stitching">Shoe Stitching</a></li>
+          <li><a href="services.html#stretch">Stretch Fitting</a></li>
+          <li><a href="services.html#waterproof">Waterproofing</a></li>
+          <li><a href="services.html#additional">Zipper Repair</a></li>
+          <li><a href="services.html#additional">Shoe Cleaning</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h5>Contact &amp; Hours</h5>
+        <div class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>42 Craftsman Lane, Nungambakkam, Chennai 600 034</span></div>
+        <div class="footer-contact-item"><i class="bi bi-telephone-fill"></i><span>+91 98765 43210</span></div>
+        <div class="footer-contact-item"><i class="bi bi-envelope-fill"></i><span>hello@solecraftrepair.in</span></div>
+        <div class="footer-hours" style="margin-top:0.75rem;">
+          <div class="footer-hours-row"><span class="day">Mon–Fri</span><span>9:00 AM – 7:00 PM</span></div>
+          <div class="footer-hours-row"><span class="day">Saturday</span><span>10:00 AM – 5:00 PM</span></div>
+          <div class="footer-hours-row"><span class="day">Sunday</span><span>Closed</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="sc-footer-bottom">
+      <p>&copy; 2026 SoleCraft Repair Studio. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Scroll to Top -->
+<button id="scroll-top" aria-label="Back to top" title="Back to top">
+  <i class="bi bi-arrow-up" aria-hidden="true"></i>
+</button>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+<script src="js/gallery.js"></script>
+</body>
+</html>

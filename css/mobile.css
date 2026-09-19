@@ -1,0 +1,199 @@
+/* ============================================================
+   SoleCraft — mobile.css  (≤767px)
+   ============================================================ */
+
+@media (max-width: 767px) {
+  :root {
+    --header-height: 64px;
+    --section-gap: var(--sp-6);
+  }
+
+  .container-sc {
+    padding-inline: 1rem;
+  }
+
+  .sc-navbar .navbar-container {
+    padding-inline: 1rem;
+  }
+
+  /* Nav */
+  .sc-nav-links {
+    display: none;
+  }
+
+  .sc-hamburger {
+    display: flex;
+  }
+
+  .sc-nav-controls .btn-login,
+  .sc-nav-controls .sc-theme-toggle,
+  .sc-nav-controls .sc-rtl-toggle {
+    display: none;
+  }
+
+  .sc-mobile-menu {
+    padding-inline: 1rem;
+  }
+
+  /* Hero */
+  .sc-hero {
+    min-height: 85vh;
+    align-items: flex-end;
+    padding-bottom: var(--sp-6);
+  }
+
+  .sc-hero-content {
+    max-width: 100%;
+  }
+
+  .sc-hero-content h1 {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+
+  .sc-hero-content .hero-ctas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sc-page-hero {
+    height: 300px;
+  }
+
+  .sc-page-hero .page-hero-content {
+    padding-inline: 1rem;
+  }
+
+  .sc-page-hero .page-hero-content h1 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  /* Sections */
+  .section-pad {
+    padding-block: var(--sp-6);
+  }
+
+  .section-pad-sm {
+    padding-block: var(--sp-4);
+  }
+
+  .section-header h2 {
+    font-size: clamp(1.5rem, 5.5vw, 2rem);
+  }
+
+  /* Grids — single column on mobile */
+  .service-grid,
+  .service-grid-2col,
+  .service-grid-4col,
+  .additional-services-grid,
+  .gallery-grid,
+  .stats-grid,
+  .process-steps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .sc-footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-5);
+  }
+
+  .sc-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--sp-2);
+  }
+
+  .footer-brand p {
+    max-width: none;
+  }
+
+  /* Services strip */
+  .services-strip {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Forms */
+  .form-row-2,
+  .form-row-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .enquiry-form-wrap {
+    padding: var(--sp-3);
+  }
+
+  /* CTA Section */
+  .cta-section .cta-content {
+    padding-block: var(--sp-6);
+  }
+
+  /* Gallery */
+  .ba-container {
+    height: 200px;
+  }
+
+  /* Before/After hero */
+  .gallery-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* Buttons full width on mobile CTAs */
+  .mobile-full-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Pricing tabs wrap */
+  .pricing-tabs {
+    gap: 0.375rem;
+  }
+
+  /* Scroll to top adjusted */
+  #scroll-top {
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+
+  /* Auth */
+  .auth-form-panel {
+    padding: 2rem 1rem;
+  }
+
+  /* Testimonial */
+  .testimonial-card .t-text {
+    font-size: var(--fs-base);
+  }
+
+  /* Stats */
+  .stat-block .stat-number {
+    font-size: 2.25rem;
+  }
+
+  /* Accordion */
+  .sc-accordion-header {
+    font-size: var(--fs-base);
+    padding: 1rem var(--sp-3);
+  }
+
+  .sc-accordion-body {
+    padding: 0 var(--sp-3) var(--sp-2);
+  }
+}
+
+/* ── Extra small – 360px ──────────────────────────────────── */
+@media (max-width: 400px) {
+  .sc-brand-tagline {
+    display: none;
+  }
+
+  .btn-sc {
+    padding: 0.625rem 1.25rem;
+    font-size: var(--fs-xs);
+  }
+
+  .sc-hero-content h1 {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,406 @@
+/* ============================================================
+   SoleCraft — auth.css
+   Login, Register, Forgot Password pages
+   ============================================================ */
+
+/* ── Auth Page Layout ────────────────────────────────────── */
+.auth-page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ── Image Panel ─────────────────────────────────────────── */
+.auth-image-panel {
+  position: relative;
+  overflow: hidden;
+  background: var(--clr-heading);
+}
+
+.auth-image-panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.auth-image-panel .auth-img-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(42,37,33,0.55) 0%,
+    rgba(107,74,50,0.30) 100%
+  );
+}
+
+.auth-image-panel .auth-img-caption {
+  position: absolute;
+  top: 3rem;
+  bottom: auto;
+  left: 2.5rem;
+  right: 2.5rem;
+  z-index: 2;
+  color: var(--clr-white);
+}
+
+.auth-image-panel .auth-img-caption blockquote {
+  font-family: var(--font-heading);
+  font-size: var(--fs-2xl);
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--clr-white);
+  margin: 0;
+}
+
+.auth-image-panel .auth-img-caption cite {
+  font-size: var(--fs-xs);
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+  display: block;
+  margin-top: 0.75rem;
+}
+
+/* ── Form Panel ──────────────────────────────────────────── */
+.auth-form-panel {
+  background: var(--bg-page);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2.5rem;
+  min-height: 100vh;
+}
+
+.auth-form-inner {
+  width: 100%;
+  max-width: 420px;
+}
+
+/* ── Auth Brand ──────────────────────────────────────────── */
+.auth-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  text-align: left;
+  margin-bottom: var(--sp-5);
+  width: fit-content;
+  margin-inline: auto;
+  color: inherit;
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.auth-brand:hover {
+  color: inherit;
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.auth-brand-logo {
+  height: 60px;
+  width: auto;
+  max-width: 220px;
+  object-fit: contain;
+  display: block;
+}
+
+/* ── Auth Form Header ────────────────────────────────────── */
+.auth-form-heading {
+  font-family: var(--font-heading);
+  font-size: var(--fs-2xl);
+  color: var(--clr-heading);
+  margin-bottom: 0.25rem;
+}
+
+.auth-form-subtext {
+  font-size: var(--fs-sm);
+  color: var(--clr-body);
+  margin-bottom: var(--sp-4);
+}
+
+/* ── Auth Form ───────────────────────────────────────────── */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+}
+
+/* ── Theme/RTL Controls on Auth ──────────────────────────── */
+.auth-controls {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+/* ── Social Login Divider ────────────────────────────────── */
+.auth-divider {
+  position: relative;
+  text-align: center;
+  margin-block: var(--sp-3);
+}
+
+.auth-divider::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 1px solid var(--clr-border);
+}
+
+.auth-divider span {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-page);
+  padding-inline: 1rem;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  color: var(--clr-body);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Social Login Buttons ────────────────────────────────── */
+.auth-social-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+/* ── Auth Footer Text ────────────────────────────────────── */
+.auth-footer-text {
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--clr-body);
+  margin-top: var(--sp-3);
+}
+
+.auth-footer-text a {
+  color: var(--clr-primary);
+  font-weight: 700;
+}
+
+.auth-footer-text a:hover {
+  color: var(--clr-primary-hover);
+}
+
+/* ── Password Toggle ─────────────────────────────────────── */
+.password-field {
+  position: relative;
+}
+
+.password-field .sc-form-control {
+  padding-right: 3rem;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--clr-body);
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.25rem;
+  transition: color var(--transition-fast);
+}
+
+.password-toggle:hover {
+  color: var(--clr-primary);
+}
+
+/* ── Forgot Password Link ────────────────────────────────── */
+.forgot-link {
+  font-size: var(--fs-xs);
+  color: var(--clr-primary);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.forgot-link:hover {
+  color: var(--clr-primary-hover);
+  text-decoration: underline;
+}
+
+.auth-options-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-2);
+  margin-top: 0.625rem;
+}
+
+.remember-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--clr-body);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.remember-option input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  accent-color: var(--clr-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+[data-theme="dark"] .remember-option {
+  color: #CFC3B8;
+}
+
+@media (max-width: 359px) {
+  .auth-options-row {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ── Auth Responsive ─────────────────────────────────────── */
+/* Tablet Portrait & Laptop (768x1024, 1024x1366, 768px – 1024px) */
+@media (min-width: 768px) and (max-width: 1024px), (width: 768px) and (height: 1024px), (width: 1024px) and (height: 1366px) {
+  .auth-page {
+    grid-template-columns: 42% 58%;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .auth-image-panel {
+    display: block;
+    position: relative;
+    height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .auth-image-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .auth-image-panel .auth-img-caption {
+    top: auto;
+    bottom: 2.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .auth-image-panel .auth-img-caption blockquote {
+    font-size: clamp(1rem, 1.8vw, 1.35rem);
+    line-height: 1.45;
+  }
+
+  .auth-form-panel {
+    padding: clamp(2rem, 3.5vw, 3rem) clamp(1.25rem, 2.5vw, 2.5rem);
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .auth-form-inner {
+    max-width: 380px;
+  }
+}
+
+/* Mobile Screens (including 368x740, up to 767px) */
+@media (max-width: 767px) {
+  .auth-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .auth-image-panel {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 220px;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .auth-image-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    opacity: 0.9;
+  }
+
+  .auth-image-panel .auth-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(24, 20, 17, 0.25) 0%,
+      rgba(24, 20, 17, 0.60) 50%,
+      rgba(24, 20, 17, 0.92) 100%
+    );
+  }
+
+  .auth-image-panel .auth-img-caption {
+    position: absolute;
+    top: auto;
+    bottom: 1rem;
+    left: 1rem;
+    right: 1rem;
+    padding: 0;
+  }
+
+  .auth-image-panel .auth-img-caption blockquote {
+    font-size: 0.92rem;
+    line-height: 1.35;
+    color: #F5EFE6;
+  }
+
+  .auth-image-panel .auth-img-caption cite {
+    font-size: 0.65rem;
+    margin-top: 0.35rem;
+    color: var(--clr-accent);
+  }
+
+  .auth-form-panel {
+    width: 100%;
+    min-height: auto;
+    flex: 1;
+    padding: 1.75rem 1.25rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .auth-form-inner {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .auth-controls {
+    position: fixed;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 100;
+  }
+
+  [dir="rtl"] .auth-controls {
+    left: 0.75rem;
+    right: auto;
+  }
+}

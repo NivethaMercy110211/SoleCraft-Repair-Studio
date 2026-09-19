@@ -1,0 +1,177 @@
+/* ============================================================
+   SoleCraft — buttons.css
+   Primary, secondary, ghost, icon buttons
+   ============================================================ */
+
+/* ── Base Button ─────────────────────────────────────────── */
+.btn-sc {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius-full);
+  border: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-sc:focus-visible {
+  outline: 3px solid var(--clr-primary);
+  outline-offset: 3px;
+}
+
+.btn-sc:active {
+  transform: scale(0.975);
+}
+
+/* ── Primary Button ──────────────────────────────────────── */
+.btn-primary-sc {
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  border-color: var(--clr-primary);
+}
+
+.btn-primary-sc:hover {
+  background: var(--clr-primary-hover);
+  border-color: var(--clr-primary-hover);
+  color: var(--clr-white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(107,74,50,0.30);
+}
+
+/* ── Secondary Button ────────────────────────────────────── */
+.btn-secondary-sc {
+  background: transparent;
+  color: var(--clr-primary);
+  border-color: var(--clr-primary);
+}
+
+.btn-secondary-sc:hover {
+  background: var(--clr-primary);
+  color: var(--clr-white);
+  border-color: var(--clr-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(107,74,50,0.25);
+}
+
+/* ── Ghost Button (White Outline — for dark/hero bg) ─────── */
+.btn-ghost-sc {
+  background: transparent;
+  color: var(--clr-white);
+  border-color: rgba(255,255,255,0.55);
+}
+
+.btn-ghost-sc:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: var(--clr-white);
+  color: var(--clr-white);
+  transform: translateY(-2px);
+}
+
+/* ── Light Filled (for dark bg) ──────────────────────────── */
+.btn-light-sc {
+  background: var(--clr-white);
+  color: var(--clr-primary);
+  border-color: var(--clr-white);
+}
+
+.btn-light-sc:hover {
+  background: var(--clr-secondary);
+  border-color: var(--clr-secondary);
+  color: var(--clr-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+/* ── Size Variants ───────────────────────────────────────── */
+.btn-sc-sm {
+  font-size: var(--fs-xs);
+  padding: 0.5rem 1.25rem;
+}
+
+.btn-sc-lg {
+  font-size: var(--fs-base);
+  padding: 0.875rem 2.25rem;
+}
+
+/* ── Icon-only Button ────────────────────────────────────── */
+.btn-icon-sc {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+/* ── Enquire Link ────────────────────────────────────────── */
+.btn-link-sc {
+  background: none;
+  border: none;
+  padding: 0;
+  border-radius: 0;
+  color: var(--clr-primary);
+  font-weight: 700;
+  font-size: var(--fs-sm);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: color var(--transition-fast);
+}
+
+.btn-link-sc:hover {
+  color: var(--clr-primary-hover);
+  transform: none;
+  box-shadow: none;
+}
+
+/* ── Social Login Buttons ────────────────────────────────── */
+.btn-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  width: 100%;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--clr-border);
+  background: var(--bg-card);
+  color: var(--clr-heading);
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-social:hover {
+  border-color: var(--clr-primary);
+  background: var(--clr-beige);
+  color: var(--clr-heading);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-social img,
+.btn-social svg {
+  width: 18px;
+  height: 18px;
+}

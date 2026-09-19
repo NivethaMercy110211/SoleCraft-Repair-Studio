@@ -1,0 +1,394 @@
+/* ============================================================
+   SoleCraft — header.css
+   Sticky navbar, logo, navigation, toggles
+   ============================================================ */
+
+/* ── Sticky Header Wrapper ───────────────────────────────── */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* ── Navbar Base ─────────────────────────────────────────── */
+.sc-navbar {
+  position: relative;
+  z-index: 1;
+  height: var(--header-height);
+  background: rgba(245,239,230,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--clr-border);
+  transition: box-shadow var(--transition-base), background var(--transition-base);
+}
+
+.sc-navbar.scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.sc-navbar .navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 2.5rem;
+  gap: var(--sp-4);
+}
+
+/* ── Logo ────────────────────────────────────────────────── */
+.sc-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.sc-brand:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.sc-brand-logo {
+  height: 48px;
+  width: auto;
+  max-width: 170px;
+  object-fit: contain;
+  display: block;
+}
+
+.sc-brand-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--clr-primary);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-white);
+  font-size: 1.125rem;
+}
+
+.sc-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.sc-brand-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--clr-heading);
+  letter-spacing: -0.01em;
+}
+
+.sc-brand-tagline {
+  font-family: var(--font-body);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-primary);
+}
+
+/* ── Nav Links ───────────────────────────────────────────── */
+.sc-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sc-nav-links .nav-link {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--clr-body);
+  padding: 0.375rem 0.75rem;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--transition-fast), background var(--transition-fast);
+  position: relative;
+}
+
+.sc-nav-links .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0.75rem;
+  right: 0.75rem;
+  height: 2px;
+  background: var(--clr-primary);
+  transform: scaleX(0);
+  border-radius: var(--radius-full);
+  transition: transform var(--transition-base);
+}
+
+.sc-nav-links .nav-link:hover {
+  color: var(--clr-primary);
+  background: rgba(107,74,50,0.06);
+}
+
+.sc-nav-links .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+.sc-nav-links .nav-link.active {
+  color: var(--clr-primary);
+}
+
+.sc-nav-links .nav-link.active::after {
+  transform: scaleX(1);
+}
+
+/* ── Nav Controls ────────────────────────────────────────── */
+.sc-nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.sc-nav-controls .btn-login {
+  font-family: var(--font-body);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--clr-primary);
+  border: 1.5px solid var(--clr-primary);
+  background: transparent;
+  padding: 0.375rem 1rem;
+  border-radius: var(--radius-full);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.sc-nav-controls .btn-login:hover {
+  background: var(--clr-primary);
+  color: var(--clr-white);
+}
+
+.sc-icon-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1.5px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  color: var(--clr-body);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.sc-icon-btn:hover {
+  background: var(--clr-beige);
+  border-color: var(--clr-primary);
+  color: var(--clr-primary);
+}
+
+/* ── Mobile Toggle ───────────────────────────────────────── */
+.sc-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: 1.5px solid var(--clr-border);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  padding: 7px;
+  transition: border-color var(--transition-fast);
+}
+
+.sc-hamburger span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: var(--clr-heading);
+  border-radius: 2px;
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.sc-hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.sc-hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.sc-hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile Drawer ───────────────────────────────────────── */
+.sc-mobile-menu {
+  display: none;
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  background: var(--bg-page);
+  border-bottom: 1px solid var(--clr-border);
+  padding: var(--sp-3) 2.5rem var(--sp-4);
+  z-index: 999;
+  box-shadow: var(--shadow-lg);
+  animation: slideDown 0.25s ease;
+  /* Anchor to viewport top so it always drops below the sticky header */
+}
+
+.sc-mobile-menu.open {
+  display: block;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.sc-mobile-menu .mobile-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--sp-3);
+}
+
+.sc-mobile-menu .mobile-nav-links li + li {
+  border-top: 1px solid var(--clr-border);
+}
+
+.sc-mobile-menu .mobile-nav-links a {
+  display: block;
+  padding: 0.75rem 0;
+  font-family: var(--font-body);
+  font-size: var(--fs-base);
+  font-weight: 600;
+  color: var(--clr-body);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.sc-mobile-menu .mobile-nav-links a:hover,
+.sc-mobile-menu .mobile-nav-links a.active {
+  color: var(--clr-primary);
+}
+
+.sc-mobile-menu .mobile-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-top: var(--sp-2);
+  border-top: 1px solid var(--clr-border);
+}
+
+/* ── Hero Section ────────────────────────────────────────── */
+.sc-hero {
+  position: relative;
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--clr-heading);
+}
+
+.sc-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: transform 8s ease;
+}
+
+.sc-hero:hover .sc-hero-bg {
+  transform: scale(1.03);
+}
+
+.sc-hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--clr-white);
+  max-width: 680px;
+}
+
+.sc-hero-content .eyebrow {
+  color: var(--clr-accent);
+  margin-bottom: var(--sp-2);
+}
+
+.sc-hero-content h1 {
+  color: var(--clr-white);
+  margin-bottom: var(--sp-3);
+}
+
+.sc-hero-content .lead {
+  color: rgba(245,239,230,0.88);
+  margin-bottom: var(--sp-5);
+}
+
+.sc-hero-content .hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+}
+
+/* ── Inner Page Hero (shorter) ───────────────────────────── */
+.sc-page-hero {
+  position: relative;
+  height: 440px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: var(--clr-heading);
+}
+
+.sc-page-hero .sc-hero-bg {
+  position: absolute;
+  inset: 0;
+}
+
+.sc-page-hero .page-hero-content {
+  position: relative;
+  z-index: 2;
+  color: var(--clr-white);
+  text-align: center;
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;
+  padding-inline: 2.5rem;
+}
+
+.sc-page-hero .page-hero-content .eyebrow {
+  display: inline-flex;
+  width: auto;
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  background: rgba(24, 21, 18, 0.88);
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  color: #fff;
+}
+
+.sc-page-hero .page-hero-content h1 {
+  color: var(--clr-white);
+  margin-top: var(--sp-1);
+  margin-bottom: var(--sp-2);
+}
+
+.sc-page-hero .page-hero-content p {
+  color: rgba(245,239,230,0.85);
+  max-width: 580px;
+  margin-inline: auto;
+}
