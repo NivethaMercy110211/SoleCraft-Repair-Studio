@@ -20,32 +20,54 @@ body {
   background-position: 22% center;
 }
 
-/* Home 2 uses left-anchored editorial hero on wide desktop only */
+/* Keep Home 1 copy on the same side when the document direction changes. */
+[dir="rtl"] .home1-hero .container-sc { direction: ltr; }
+[dir="rtl"] .home1-hero .sc-hero-content { direction: rtl; text-align: right; }
+[dir="rtl"] .home1-hero .hero-overlay {
+  background: linear-gradient(120deg, rgba(42,37,33,0.70) 0%, rgba(42,37,33,0.30) 60%, transparent 100%);
+}
+
+/* Home 2 hero copy sits on the right of the workshop photo on wide screens. */
 @media (min-width: 1025px) and (orientation: landscape) {
   .home2-hero .container-sc {
     max-width: none;
-    margin-left: 0;
-    margin-right: auto;
-    padding-left: clamp(1rem, 2.2vw, 2rem);
+    margin-left: auto;
+    margin-right: 0;
+    padding-right: clamp(1rem, 2.2vw, 2rem);
   }
 
   .home2-hero .sc-hero-content {
-    margin-left: 0;
-    margin-right: auto;
+    margin-left: auto;
+    margin-right: 0;
     text-align: left;
   }
 
+  .home2-hero .hero-overlay {
+    background: linear-gradient(270deg, rgba(28,23,19,0.78), rgba(28,23,19,0.38) 65%, transparent);
+  }
+
   [dir="rtl"] .home2-hero .container-sc {
+    direction: ltr;
     margin-left: auto;
     margin-right: 0;
-    padding-inline: clamp(1rem, 2.2vw, 2rem);
+    padding-left: 0;
+    padding-right: clamp(1rem, 2.2vw, 2rem);
   }
 
   [dir="rtl"] .home2-hero .sc-hero-content {
+    direction: rtl;
     margin-left: auto;
     margin-right: 0;
     text-align: right;
   }
+
+  [dir="rtl"] .home2-hero .hero-overlay {
+    background: linear-gradient(270deg, rgba(28,23,19,0.78), rgba(28,23,19,0.38) 65%, transparent);
+  }
+}
+
+@media (min-width: 1025px) {
+  #reviews .testimonial-card .t-text { max-width: 24rem; }
 }
 
 /* ── Home Hero Banners: Centering & Proportions for 768x1024, 1024x1366, Tablet & Portrait ── */
