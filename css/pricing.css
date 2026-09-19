@@ -300,6 +300,26 @@
   }
 }
 
+/* Fit every pricing column at laptop widths without clipping turnaround badges. */
+@media (min-width: 980px) and (max-width: 1359px) {
+  .pricing-table {
+    width: 100%;
+    min-width: 0;
+    table-layout: fixed;
+  }
+  .pricing-table th,
+  .pricing-table td {
+    white-space: normal;
+    overflow-wrap: break-word;
+    padding-inline: .75rem;
+  }
+  .pricing-table th:nth-child(1) { width: 24%; }
+  .pricing-table th:nth-child(2) { width: 37%; }
+  .pricing-table th:nth-child(3) { width: 12%; }
+  .pricing-table th:nth-child(4) { width: 15%; }
+  .pricing-table th:nth-child(5) { width: 12%; }
+}
+
 /* ── Stacked Cards (Mobile ≤767px) ───────────────────────── */
 @media (max-width: 767px) {
   .pricing-table thead {

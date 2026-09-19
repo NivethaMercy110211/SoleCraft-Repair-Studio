@@ -53,9 +53,9 @@ header {
 }
 
 .sc-brand-logo {
-  height: 48px;
+  height: 56px;
   width: auto;
-  max-width: 170px;
+  max-width: 195px;
   object-fit: contain;
   display: block;
 }
@@ -327,6 +327,18 @@ header {
 .sc-hero-content .eyebrow {
   color: var(--clr-accent);
   margin-bottom: var(--sp-2);
+}
+
+.sc-hero .sc-hero-content .eyebrow {
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid rgba(245, 239, 230, 0.45);
+  border-radius: var(--radius-full);
+  background: rgba(24, 21, 18, 0.82);
+  color: #f5dfc7;
+  line-height: 1.45;
 }
 
 .sc-hero-content h1 {

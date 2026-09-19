@@ -145,6 +145,10 @@
 
   function alignAuthCaption() {
     if (!authPage || !authCaption || !authFormInner) return;
+    if (window.innerWidth <= 1024) {
+      authCaption.style.removeProperty('top');
+      return;
+    }
     const pageTop = authPage.getBoundingClientRect().top;
     const formTop = authFormInner.getBoundingClientRect().top;
     authCaption.style.top = `${Math.max(48, formTop - pageTop)}px`;

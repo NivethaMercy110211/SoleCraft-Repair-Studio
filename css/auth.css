@@ -59,13 +59,18 @@
   font-weight: 700;
   letter-spacing: 0.10em;
   text-transform: uppercase;
-  color: var(--clr-accent);
-  display: block;
+  color: #f5efe6;
+  background: rgba(24, 21, 18, 0.82);
+  display: inline-block;
+  width: fit-content;
+  padding: 0.35rem 0.65rem;
+  border-radius: var(--radius-sm);
   margin-top: 0.75rem;
 }
 
 /* ── Form Panel ──────────────────────────────────────────── */
 .auth-form-panel {
+  position: relative;
   background: var(--bg-page);
   display: flex;
   flex-direction: column;
@@ -103,9 +108,9 @@
 }
 
 .auth-brand-logo {
-  height: 60px;
+  height: 72px;
   width: auto;
-  max-width: 220px;
+  max-width: 250px;
   object-fit: contain;
   display: block;
 }
@@ -116,12 +121,14 @@
   font-size: var(--fs-2xl);
   color: var(--clr-heading);
   margin-bottom: 0.25rem;
+  text-align: center;
 }
 
 .auth-form-subtext {
   font-size: var(--fs-sm);
   color: var(--clr-body);
   margin-bottom: var(--sp-4);
+  text-align: center;
 }
 
 /* ── Auth Form ───────────────────────────────────────────── */
@@ -373,7 +380,6 @@
   .auth-image-panel .auth-img-caption cite {
     font-size: 0.65rem;
     margin-top: 0.35rem;
-    color: var(--clr-accent);
   }
 
   .auth-form-panel {
@@ -393,10 +399,10 @@
   }
 
   .auth-controls {
-    position: fixed;
+    position: absolute;
     top: 0.75rem;
     right: 0.75rem;
-    z-index: 100;
+    margin-top: 0;
   }
 
   [dir="rtl"] .auth-controls {

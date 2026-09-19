@@ -48,6 +48,11 @@
   color: var(--clr-primary);
 }
 
+[data-theme="dark"] .services-strip-item:hover,
+[data-theme="dark"] .services-strip-item:focus-visible {
+  background: #3a3129;
+}
+
 /* ── Navbar Dark ─────────────────────────────────────────── */
 [data-theme="dark"] .sc-navbar {
   background: rgba(24,21,18,0.95);

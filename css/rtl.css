@@ -8,6 +8,11 @@
   text-align: right;
 }
 
+/* Keep English copy and punctuation in reading order while the layout mirrors. */
+[dir="rtl"] :where(h1, h2, h3, h4, h5, h6, p, blockquote, cite) {
+  direction: ltr;
+}
+
 /* ── Navbar RTL ──────────────────────────────────────────── */
 [dir="rtl"] .sc-brand-icon {
   margin-left: 0.625rem;
@@ -32,13 +37,43 @@
   text-align: center;
 }
 
+[dir="rtl"] .sc-page-hero .page-hero-content h1,
+[dir="rtl"] .sc-page-hero .page-hero-content p,
+[dir="rtl"] .sc-page-hero .page-hero-content .eyebrow {
+  text-align: center;
+  margin-inline: auto;
+}
+
+/* ── CTA RTL ─────────────────────────────────────────────── */
+[dir="rtl"] .cta-section .cta-content {
+  text-align: center;
+}
+
+[dir="rtl"] .cta-section .cta-content h2,
+[dir="rtl"] .cta-section .cta-content p,
+[dir="rtl"] .cta-section .cta-content .eyebrow {
+  text-align: center;
+  margin-inline: auto;
+}
+
 /* ── Section Header RTL ──────────────────────────────────── */
 [dir="rtl"] .section-header .sc-divider {
   margin-right: 0;
   margin-left: auto;
 }
 
+[dir="rtl"] .section-header.center {
+  text-align: center;
+}
+
 [dir="rtl"] .section-header.center .sc-divider {
+  margin-inline: auto;
+}
+
+[dir="rtl"] .section-header.center .eyebrow,
+[dir="rtl"] .section-header.center h2,
+[dir="rtl"] .section-header.center p {
+  text-align: center;
   margin-inline: auto;
 }
 
@@ -48,13 +83,31 @@
   right: 0.75rem;
 }
 
-/* ── Cards RTL ───────────────────────────────────────────── */
+/* ── Services Page RTL ───────────────────────────────────── */
 [dir="rtl"] .service-category-header {
-  flex-direction: row-reverse;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
+[dir="rtl"] .service-category-header .service-category-icon {
+  margin-inline: auto;
+}
+
+[dir="rtl"] .service-category-header > div:last-child {
+  text-align: center;
+  margin-inline: auto;
+}
+
+[dir="rtl"] .service-category-title,
+[dir="rtl"] .service-category-desc {
+  text-align: center;
+  margin-inline: auto;
+}
+
+/* ── Cards RTL ───────────────────────────────────────────── */
 [dir="rtl"] .add-service-card {
-  flex-direction: row-reverse;
+  flex-direction: row;
   text-align: right;
 }
 
@@ -111,7 +164,7 @@
 
 [dir="rtl"] .auth-options-row,
 [dir="rtl"] .remember-option {
-  flex-direction: row-reverse;
+  flex-direction: row;
 }
 
 /* ── Pricing RTL ─────────────────────────────────────────── */
@@ -137,6 +190,28 @@
   text-align: right;
 }
 
+[dir="rtl"] .sc-form-control,
+[dir="rtl"] .sc-select-trigger,
+[dir="rtl"] .sc-select-option {
+  direction: ltr;
+  text-align: right;
+}
+
+[dir="rtl"] .sc-form-control::placeholder {
+  text-align: right;
+}
+
+[dir="rtl"] .sc-select-trigger {
+  background-position: left 1rem center;
+  padding-left: 2.5rem;
+  padding-right: 1rem;
+}
+
+[dir="rtl"] .sc-select::after {
+  right: auto;
+  left: 1.1rem;
+}
+
 [dir="rtl"] select.sc-form-control {
   background-position: left 1rem center;
   padding-right: 1rem;
@@ -155,16 +230,9 @@
 
 /* ── Gallery Filter RTL ──────────────────────────────────── */
 [dir="rtl"] .gallery-filters {
-  flex-direction: row-reverse;
+  flex-direction: row;
+  justify-content: center;
+  margin-inline: auto;
 }
 
-/* ── Before/After Labels RTL ─────────────────────────────── */
-[dir="rtl"] .ba-label.before {
-  left: auto;
-  right: 12px;
-}
-
-[dir="rtl"] .ba-label.after {
-  right: auto;
-  left: 12px;
-}
+/* Comparison images keep their physical before/after sides in both modes. */

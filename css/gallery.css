@@ -10,6 +10,10 @@
   gap: 0.5rem;
   margin-bottom: var(--sp-5);
   align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-inline: auto;
+  text-align: center;
 }
 
 .gallery-filter-btn {
@@ -40,6 +44,36 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
+  justify-content: center;
+}
+
+.gallery-grid[data-visible-count="1"] {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.gallery-grid[data-visible-count="1"] .gallery-item:not(.hidden) {
+  width: min(100%, 420px);
+}
+
+.gallery-grid[data-visible-count="2"] {
+  display: flex !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: 1.25rem;
+}
+
+.gallery-grid[data-visible-count="2"] .gallery-item:not(.hidden) {
+  width: min(100%, 420px);
+}
+
+.gallery-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: var(--sp-6) var(--sp-3);
+  color: var(--clr-muted);
+  font-size: var(--fs-md);
+  width: 100%;
 }
 
 .gallery-item {
@@ -130,6 +164,32 @@
   color: var(--clr-primary);
   font-size: 0.875rem;
   pointer-events: none;
+}
+
+/* Keep the drag direction visible even when the icon font is unavailable. */
+.ba-handle-knob i {
+  display: none;
+}
+
+.ba-handle-knob::before,
+.ba-handle-knob::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  width: 8px;
+  height: 8px;
+  border-top: 2px solid #2a2521;
+  border-right: 2px solid #2a2521;
+}
+
+.ba-handle-knob::before {
+  left: 9px;
+  transform: rotate(-135deg);
+}
+
+.ba-handle-knob::after {
+  right: 9px;
+  transform: rotate(45deg);
 }
 
 /* ── Before/After Labels ─────────────────────────────────── */

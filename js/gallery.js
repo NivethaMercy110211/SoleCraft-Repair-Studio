@@ -7,8 +7,10 @@
   'use strict';
 
   /* ── Gallery Filter System ───────────────────────────────── */
-  const filterBtns = document.querySelectorAll('.gallery-filter-btn');
+  const filterBtns   = document.querySelectorAll('.gallery-filter-btn');
   const galleryItems = document.querySelectorAll('.gallery-item');
+  const galleryGrid  = document.querySelector('.gallery-grid');
+  const galleryEmpty = document.getElementById('gallery-empty');
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -16,16 +18,26 @@
       btn.classList.add('active');
 
       const filter = btn.getAttribute('data-filter');
+      let visibleCount = 0;
 
       galleryItems.forEach(item => {
         const category = item.getAttribute('data-category');
         if (filter === 'all' || category === filter) {
           item.classList.remove('hidden');
           item.style.animation = 'fadeInItem 0.35s ease forwards';
+          visibleCount++;
         } else {
           item.classList.add('hidden');
         }
       });
+
+      if (galleryGrid) {
+        galleryGrid.setAttribute('data-visible-count', visibleCount);
+      }
+
+      if (galleryEmpty) {
+        galleryEmpty.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
     });
   });
 
