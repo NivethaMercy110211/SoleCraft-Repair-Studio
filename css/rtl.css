@@ -59,8 +59,15 @@
 }
 
 [dir="rtl"] .footer-contact-item {
-  flex-direction: row-reverse;
+  flex-direction: row;
   text-align: right;
+}
+
+[dir="rtl"] .footer-contact-item span {
+  min-width: 0;
+  direction: ltr;
+  unicode-bidi: isolate;
+  overflow-wrap: anywhere;
 }
 
 /* ── Footer RTL ──────────────────────────────────────────── */
