@@ -114,10 +114,69 @@
       position: relative;
     }
     .process-step h5 { font-family: var(--font-heading); font-size: var(--fs-xl); color: var(--clr-heading); margin: var(--sp-2) 0 var(--sp-1); }
+    .materials-showcase-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: var(--sp-4);
+      align-items: stretch;
+    }
+    .materials-images-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-3);
+      height: 100%;
+    }
+    .materials-img-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--clr-border);
+      box-shadow: var(--shadow-sm);
+      height: 100%;
+      min-height: 380px;
+      display: flex;
+    }
+    .materials-img-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform var(--transition-slow);
+    }
+    .materials-img-card:hover img {
+      transform: scale(1.05);
+    }
+    .materials-img-overlay {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: var(--sp-3);
+      background: linear-gradient(to top, rgba(26,18,16,0.92) 0%, rgba(26,18,16,0.45) 60%, transparent 100%);
+      color: #F5EFE6;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      z-index: 2;
+    }
+    .materials-img-overlay h4 {
+      font-family: var(--font-heading);
+      font-size: var(--fs-lg);
+      color: #F5EFE6;
+      margin: 0.25rem 0 0;
+    }
+    .materials-img-overlay p {
+      font-size: var(--fs-xs);
+      color: rgba(245,239,230,0.85);
+      margin: 0;
+      line-height: 1.35;
+    }
+    .materials-grid-col {
+      height: 100%;
+    }
     .materials-grid {
       display: grid;
-      grid-template-columns: repeat(6, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: var(--sp-3);
+      height: 100%;
     }
     .material-item {
       text-align: center;
@@ -126,15 +185,23 @@
       border: 1px solid var(--clr-border);
       border-radius: var(--radius-lg);
       transition: all var(--transition-fast);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.35rem;
     }
     .material-item:hover {
       border-color: var(--clr-primary);
       background: var(--clr-beige);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
     }
     [data-theme="dark"] .material-item:hover {
       background: #3a3129;
     }
-    .material-item i { font-size: 1.75rem; color: var(--clr-primary); margin-bottom: 0.5rem; }
+    .material-item i { font-size: 1.75rem; color: var(--clr-primary); margin-bottom: 0.25rem; transition: transform var(--transition-fast); }
+    .material-item:hover i { transform: scale(1.1); }
     .material-item span { font-size: var(--fs-xs); font-weight: 700; color: var(--clr-heading); letter-spacing: 0.04em; }
     .reviews-grid {
       display: grid;
@@ -145,12 +212,25 @@
       .why-repair-grid { grid-template-columns: 1fr; }
       .why-repair-img { height: 300px; }
       .craft-detail-grid, .turnaround-grid, .reviews-grid { grid-template-columns: repeat(2, 1fr); }
-      .stats-grid, .process-steps-grid, .materials-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-grid, .process-steps-grid { grid-template-columns: repeat(2, 1fr); }
+      .materials-showcase-grid { grid-template-columns: 1fr; gap: var(--sp-4); }
+      .materials-img-card { min-height: 240px; height: 260px; }
+      .materials-grid { grid-template-columns: repeat(3, 1fr); }
     }
     @media (max-width: 767px) {
       .craft-detail-grid, .turnaround-grid, .reviews-grid,
       .stats-grid, .process-steps-grid { grid-template-columns: 1fr; }
-      .materials-grid { grid-template-columns: repeat(3, 1fr); }
+      .materials-images-col { grid-template-columns: 1fr 1fr; gap: var(--sp-2); }
+      .materials-img-card { min-height: 180px; height: 190px; }
+      .materials-img-overlay { padding: 0.75rem; }
+      .materials-img-overlay h4 { font-size: var(--fs-base); }
+      .materials-img-overlay p { display: none; }
+      .materials-grid { grid-template-columns: repeat(2, 1fr) !important; gap: var(--sp-2); }
+    }
+    @media (max-width: 480px) {
+      .materials-images-col { grid-template-columns: 1fr; }
+      .materials-img-card { min-height: 180px; height: 180px; }
+      .materials-img-overlay p { display: block; }
     }
   </style>
 </head>
@@ -605,19 +685,44 @@
       <h2 id="materials-heading">Materials &amp; Finishing</h2>
       <p>We stock a range of professional-grade repair materials. Honest material matching is central to every repair we perform.</p>
     </div>
-    <div class="materials-grid">
-      <div class="material-item fade-up"><i class="bi bi-circle-square"></i><span>Full-grain Leather</span></div>
-      <div class="material-item fade-up stagger-1"><i class="bi bi-water"></i><span>Suede &amp; Nubuck</span></div>
-      <div class="material-item fade-up stagger-2"><i class="bi bi-gear"></i><span>Rubber Soles</span></div>
-      <div class="material-item fade-up stagger-3"><i class="bi bi-layers"></i><span>Leather Soles</span></div>
-      <div class="material-item fade-up stagger-4"><i class="bi bi-scissors"></i><span>Waxed Thread</span></div>
-      <div class="material-item fade-up stagger-5"><i class="bi bi-droplet"></i><span>Leather Cream</span></div>
-      <div class="material-item fade-up"><i class="bi bi-brush"></i><span>Edge Dressing</span></div>
-      <div class="material-item fade-up stagger-1"><i class="bi bi-shield"></i><span>Waterproof Spray</span></div>
-      <div class="material-item fade-up stagger-2"><i class="bi bi-palette"></i><span>Leather Dye</span></div>
-      <div class="material-item fade-up stagger-3"><i class="bi bi-cpu"></i><span>Heel Tips</span></div>
-      <div class="material-item fade-up stagger-4"><i class="bi bi-link-45deg"></i><span>Eyelets &amp; Hardware</span></div>
-      <div class="material-item fade-up stagger-5"><i class="bi bi-bar-chart"></i><span>Insoles</span></div>
+    <div class="materials-showcase-grid">
+      <!-- Two Images Grid Side -->
+      <div class="materials-images-col fade-up">
+        <div class="materials-img-card">
+          <img src="assets/images/craftsmanship/materials-display.jpg" alt="Premium leathers, Vibram soles, and repair materials" loading="lazy">
+          <div class="materials-img-overlay">
+            <span class="sc-badge sc-badge-primary">Premium Stocks</span>
+            <h4>Artisan Leathers</h4>
+            <p>Full-grain hides, durable rubber soles &amp; wax threads</p>
+          </div>
+        </div>
+        <div class="materials-img-card">
+          <img src="assets/images/craftsmanship/bench-tools.jpg" alt="Master cobbler bench tools and edge finishing equipment" loading="lazy">
+          <div class="materials-img-overlay">
+            <span class="sc-badge sc-badge-dark">Workshop Grade</span>
+            <h4>Precision Finishing</h4>
+            <p>Traditional edge dressing, conditioning creams &amp; dyes</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Materials Items Grid Side -->
+      <div class="materials-grid-col fade-up stagger-1">
+        <div class="materials-grid">
+          <div class="material-item fade-up"><i class="bi bi-circle-square"></i><span>Full-grain Leather</span></div>
+          <div class="material-item fade-up stagger-1"><i class="bi bi-water"></i><span>Suede &amp; Nubuck</span></div>
+          <div class="material-item fade-up stagger-2"><i class="bi bi-gear"></i><span>Rubber Soles</span></div>
+          <div class="material-item fade-up stagger-3"><i class="bi bi-layers"></i><span>Leather Soles</span></div>
+          <div class="material-item fade-up stagger-4"><i class="bi bi-scissors"></i><span>Waxed Thread</span></div>
+          <div class="material-item fade-up stagger-5"><i class="bi bi-droplet"></i><span>Leather Cream</span></div>
+          <div class="material-item fade-up"><i class="bi bi-brush"></i><span>Edge Dressing</span></div>
+          <div class="material-item fade-up stagger-1"><i class="bi bi-shield"></i><span>Waterproof Spray</span></div>
+          <div class="material-item fade-up stagger-2"><i class="bi bi-palette"></i><span>Leather Dye</span></div>
+          <div class="material-item fade-up stagger-3"><i class="bi bi-cpu"></i><span>Heel Tips</span></div>
+          <div class="material-item fade-up stagger-4"><i class="bi bi-link-45deg"></i><span>Eyelets &amp; Hardware</span></div>
+          <div class="material-item fade-up stagger-5"><i class="bi bi-bar-chart"></i><span>Insoles</span></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>

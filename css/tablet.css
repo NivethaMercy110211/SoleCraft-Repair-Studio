@@ -77,17 +77,14 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  /* Auth — Keep Image Panel visible on tablet */
+  /* Auth — Centered card layout */
   .auth-page {
-    grid-template-columns: 42% 58%;
-    min-height: 100vh;
-    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
-
   .auth-image-panel {
-    display: block;
-    min-height: 100vh;
-    min-height: 100dvh;
+    display: none;
   }
 
   /* Process steps */

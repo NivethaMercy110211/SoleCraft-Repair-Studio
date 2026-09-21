@@ -19,20 +19,11 @@
 </head>
 <body>
 
-<div class="auth-page">
+<div class="auth-page" style="background-image: url('assets/images/auth/register.jpg');">
+  <div class="auth-bg-overlay" aria-hidden="true"></div>
 
-  <!-- Image Panel -->
-  <div class="auth-image-panel" aria-hidden="true">
-    <img src="assets/images/auth/register.jpg" alt="Cobbler inspecting a repaired leather sole under workshop lighting">
-    <div class="auth-img-overlay"></div>
-    <div class="auth-img-caption">
-      <blockquote>"Good shoes are worth maintaining. We make that straightforward."</blockquote>
-      <cite>SoleCraft Repair Studio</cite>
-    </div>
-  </div>
-
-  <!-- Form Panel -->
-  <div class="auth-form-panel">
+  <!-- Centered Auth Card -->
+  <div class="auth-card" style="max-width: 520px;">
     <div class="auth-form-inner">
       <!-- Brand -->
       <a href="index.html" class="auth-brand" aria-label="SoleCraft home">
@@ -107,7 +98,7 @@
 
         <div class="sc-form-group" style="flex-direction:row;align-items:flex-start;gap:0.625rem;">
           <input type="checkbox" id="reg-terms" name="terms" required style="width:16px;height:16px;margin-top:3px;flex-shrink:0;cursor:pointer;">
-          <label for="reg-terms" style="font-size:var(--fs-xs);color:var(--clr-body);cursor:pointer;">I agree to the <a href="#" style="color:var(--clr-primary);">Terms of Service</a> and <a href="#" style="color:var(--clr-primary);">Privacy Policy</a></label>
+          <label for="reg-terms" style="font-size:var(--fs-xs);color:var(--clr-body);cursor:pointer;">I agree to the <a href="#" style="color:var(--clr-primary);font-weight:600;">Terms of Service</a> and <a href="#" style="color:var(--clr-primary);font-weight:600;">Privacy Policy</a></label>
         </div>
 
         <button type="submit" class="btn-sc btn-primary-sc btn-sc-lg" id="register-submit-btn" style="width:100%;justify-content:center;">
@@ -119,10 +110,11 @@
         Already have an account? <a href="login.html" id="go-to-login-link">Sign in</a>
       </p>
     </div>
-    <div class="auth-controls" aria-label="Appearance and direction controls">
-      <button class="sc-icon-btn sc-theme-toggle" aria-label="Toggle theme"><i class="bi bi-moon sc-theme-icon"></i></button>
-      <button class="sc-icon-btn sc-rtl-toggle" aria-label="Toggle direction"><span class="sc-rtl-label" style="font-size:0.65rem;font-weight:700;">RTL</span></button>
-    </div>
+  </div>
+
+  <div class="auth-controls" aria-label="Appearance and direction controls">
+    <button class="sc-icon-btn sc-theme-toggle" aria-label="Toggle theme"><i class="bi bi-moon sc-theme-icon"></i></button>
+    <button class="sc-icon-btn sc-rtl-toggle" aria-label="Toggle direction"><span class="sc-rtl-label" style="font-size:0.65rem;font-weight:700;">RTL</span></button>
   </div>
 </div>
 

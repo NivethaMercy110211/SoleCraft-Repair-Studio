@@ -48,9 +48,19 @@
   color: var(--clr-primary);
 }
 
+[data-theme="dark"] .services-strip-item {
+  background: #231E19;
+  border-color: #4A3E33;
+}
+
 [data-theme="dark"] .services-strip-item:hover,
 [data-theme="dark"] .services-strip-item:focus-visible {
-  background: #3a3129;
+  border-color: var(--clr-primary);
+  background: #2B2520;
+}
+
+[data-theme="dark"] .services-strip-info {
+  background: #231E19;
 }
 
 /* ── Navbar Dark ─────────────────────────────────────────── */
@@ -161,26 +171,34 @@
 
 /* ── Forms Dark ──────────────────────────────────────────── */
 [data-theme="dark"] .sc-form-control {
-  background: #2B2520;
-  border-color: #41382F;
-  color: #F5EFE6;
+  background: #1D1815;
+  border-color: #55483B;
+  color: #F8F4EE;
 }
 
 [data-theme="dark"] .sc-form-control::placeholder {
-  color: #6F675F;
+  color: #A39688;
+  opacity: 1;
+}
+
+[data-theme="dark"] .sc-form-control:hover {
+  border-color: #8C7765;
 }
 
 [data-theme="dark"] .sc-form-control:focus {
   border-color: var(--clr-accent);
-  box-shadow: 0 0 0 3px rgba(182,139,103,0.18);
+  background: #231E19;
+  color: #FFFFFF;
+  box-shadow: 0 0 0 3px rgba(182,139,103,0.25);
 }
 
 [data-theme="dark"] .sc-form-label {
-  color: #CFC3B8;
+  color: #F0E8DD;
+  font-weight: 700;
 }
 
 [data-theme="dark"] .sc-form-group .form-hint {
-  color: #6F675F;
+  color: #CFC3B8;
 }
 
 /* ── Pricing Dark ────────────────────────────────────────── */
@@ -263,28 +281,31 @@
 }
 
 /* ── Auth Dark ───────────────────────────────────────────── */
+[data-theme="dark"] .auth-card,
 [data-theme="dark"] .auth-form-panel {
-  background: #181512;
+  background: #231E19;
+  border-color: #4A3E33;
+  box-shadow: 0 24px 55px rgba(0, 0, 0, 0.70);
 }
 
 [data-theme="dark"] .auth-divider span {
-  background: #181512;
-  color: #6F675F;
+  background: #231E19;
+  color: #CFC3B8;
 }
 
 [data-theme="dark"] .auth-divider::before {
-  border-color: #41382F;
+  border-color: #4A3E33;
 }
 
 [data-theme="dark"] .btn-social {
-  background: #2B2520;
-  border-color: #41382F;
+  background: #1D1815;
+  border-color: #55483B;
   color: #F5EFE6;
 }
 
 [data-theme="dark"] .btn-social:hover {
-  border-color: var(--clr-accent);
-  background: rgba(107,74,50,0.18);
+  border-color: var(--clr-primary);
+  background: #2B2520;
 }
 
 /* ── Timings Component Dark ──────────────────────────────── */

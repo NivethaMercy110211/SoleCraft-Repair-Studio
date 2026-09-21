@@ -224,39 +224,69 @@
 .services-strip {
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
-  gap: 1px;
-  background: var(--clr-border);
-  border: 1px solid var(--clr-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+  gap: var(--sp-3);
+  overflow: visible;
 }
 
 .services-strip-item {
   background: var(--bg-card);
-  padding: var(--sp-4);
-  text-align: center;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  text-decoration: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--sp-1);
-  transition: background var(--transition-fast);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  box-shadow: var(--shadow-sm);
 }
 
 .services-strip-item:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--clr-primary);
+}
+
+.services-strip-media {
+  height: 90px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
   background: var(--clr-beige);
 }
 
-.services-strip-item i {
-  font-size: 1.5rem;
+.services-strip-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.services-strip-item:hover .services-strip-media img {
+  transform: scale(1.08);
+}
+
+.services-strip-info {
+  padding: 0.65rem 0.5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: var(--bg-card);
+}
+
+.services-strip-info i {
+  font-size: 1rem;
   color: var(--clr-primary);
 }
 
-.services-strip-item span {
+.services-strip-info span {
   font-size: var(--fs-xs);
   font-weight: 700;
   color: var(--clr-heading);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
 }
 
 /* ── Additional Services Section ─────────────────────────── */

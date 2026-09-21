@@ -124,7 +124,7 @@
 
   /* CTA Section */
   .cta-section .cta-content {
-    padding-block: var(--sp-6);
+    padding-block: var(--sp-4);
   }
 
   /* Gallery */

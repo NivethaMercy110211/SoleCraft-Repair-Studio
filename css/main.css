@@ -437,6 +437,7 @@ p {
   background-position: center;
   background-attachment: fixed;
   overflow: hidden;
+  padding-block: 0 !important;
 }
 
 .cta-section .cta-overlay {
@@ -449,8 +450,9 @@ p {
   position: relative;
   z-index: 2;
   text-align: center;
-  padding-block: var(--sp-8);
+  padding-block: clamp(2.25rem, 4vw, 3.25rem);
   color: var(--clr-white);
+  max-width: 820px;
 }
 
 .cta-section .cta-content h2 {
@@ -460,7 +462,7 @@ p {
 
 .cta-section .cta-content p {
   color: rgba(245,239,230,0.85);
-  margin-bottom: var(--sp-4);
+  margin-bottom: var(--sp-3);
   margin-inline: auto;
 }
 

@@ -29,23 +29,31 @@
   padding: 0.75rem 1rem;
   font-family: var(--font-body);
   font-size: var(--fs-base);
-  color: var(--clr-heading);
-  background: var(--bg-card);
-  border: 1.5px solid var(--clr-border);
+  font-weight: 500;
+  color: #1A1715;
+  background: #FFFFFF;
+  border: 1.5px solid #BFB1A0;
   border-radius: var(--radius-md);
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
   appearance: none;
   -webkit-appearance: none;
 }
 
 .sc-form-control::placeholder {
-  color: rgba(111,103,95,0.60);
+  color: #786E64;
+  opacity: 1;
+}
+
+.sc-form-control:hover {
+  border-color: #8C7765;
 }
 
 .sc-form-control:focus {
   outline: none;
   border-color: var(--clr-primary);
-  box-shadow: 0 0 0 3px rgba(107,74,50,0.15);
+  background: #FFFFFF;
+  color: #1A1715;
+  box-shadow: 0 0 0 3px rgba(107,74,50,0.20);
 }
 
 .sc-form-control.is-invalid {
